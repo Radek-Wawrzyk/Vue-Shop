@@ -17,5 +17,7 @@
 
   @import "@/Styles/ResetCSS/reset.scss";
   @import "@/Styles/Grid/grid.scss";
+  @import "@/Styles/main.scss";
+  
 
 </style>
