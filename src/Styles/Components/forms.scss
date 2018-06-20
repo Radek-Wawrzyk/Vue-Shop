@@ -1,0 +1,19 @@
+input,textarea,select {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 0 0 30px 0;
+  border: 1px solid $greyLight;
+  transition: border 0.25s;
+  font-family: 'Montserrat', sans-serif;
+  &:focus {
+    outline: none;
+    border-color: $gold;
+  }
+  &::placeholder {
+    color: $greyMedium;
+  }
+}
+textarea {
+  resize: vertical;
+}
