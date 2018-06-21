@@ -1,0 +1,9 @@
+//Form fade
+
+.fade-form-enter-active, .fade-form-leave-active {
+  transition: opacity 0.3s, transform 0.2s;
+}
+.fade-form-enter, .fade-form-leave-to {
+  opacity: 0;
+  transform: translate3d(-10px,0,0);
+}

@@ -20,31 +20,41 @@
           <div class="col-md-6">
             <div class="form-group">
               <input type="text" placeholder="Your Name" v-model="fields.name">
-              <p class="form-error">{{errors.name}}</p>
+              <transition name="fade-form">
+                <p class="form-error" v-if="errors.name">{{errors.name}}</p>
+              </transition>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <input type="email" placeholder="Your Email" v-model="fields.email">
-              <p class="form-error">{{errors.email}}</p>
+              <transition name="fade-form">
+                <p class="form-error" v-if="errors.email">{{errors.email}}</p>
+              </transition>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <input type="text" placeholder="Your Address" v-model="fields.address">
-              <p class="form-error">{{errors.address}}</p>
+              <transition name="fade-form">
+                <p class="form-error" v-if="errors.address">{{errors.address}}</p>
+              </transition>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <input type="text" placeholder="Your Phone" v-model="fields.phone">
-              <p class="form-error">{{errors.phone}}</p>
+              <transition name="fade-form">
+                <p class="form-error" v-if="errors.phone">{{errors.phone}}</p>
+              </transition>
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
               <textarea placeholder="Your Message" rows="9" v-model="fields.message"></textarea>
-              <p class="form-error">{{errors.message}}</p>
+              <transition name="fade-form">
+                <p class="form-error" v-if="errors.message">{{errors.message}}</p>
+              </transition>
             </div>
           </div>
           <div class="col-md-12">
@@ -87,10 +97,12 @@ export default {
       const checkEmail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
       const checkPhone = /^[0-9\+]{8,13}$/;
 
+      //Main condition
       if ( this.fields.name.length >= 1 && this.fields.address.length >= 1 && this.fields.message.length >= 1 && checkEmail.test(this.fields.email) && checkPhone.test(this.fields.phone) ) {
         console.log("form submited!");
       } else console.log("form not submited!");
 
+      //Validation fields
       this.fields.name.length >= 1 ? this.errors.name = "" : this.errors.name = "Please fill Name";
       this.fields.address.length >= 1 ? this.errors.address = "" : this.errors.address = "Please fill Address";
       this.fields.message.length >= 1 ? this.errors.message = "" : this.errors.message = "Please fill Message";
