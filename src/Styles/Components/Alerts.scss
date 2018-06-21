@@ -1,0 +1,18 @@
+.alert {
+  margin: 30px 0;
+  padding: 20px;
+}
+.alert-success  {
+  background: $successLight;
+  border: 1px solid $successMedium;
+  p {
+    color: $successDark;
+  }
+}
+.alert-error {
+  background: $errorLight;
+  border: 1px solid $errorMedium;
+  p {
+    color: $errorDark;
+  }
+}

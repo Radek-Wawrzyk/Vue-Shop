@@ -13,7 +13,7 @@ input,textarea,select {
     color: $greyMedium;
   }
   &.error:focus {
-    border-color: $errorLight;
+    border-color: $errorMedium;
   }
 }
 textarea {
@@ -33,7 +33,7 @@ textarea {
   position: absolute;
   left: 0;
   bottom: -20px;
-  color: $error;
+  color: $errorDark;
   font-size: 13px;
 }
 .error {

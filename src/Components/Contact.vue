@@ -59,6 +59,20 @@
         </div>
         <form class="contact-form">
           <div class="row">
+            <div class="col-md-12">
+              <transition name="fade">
+                <div class="alert alert-success" v-if="sendStatus.success">
+                  <p>Contact form successfully submitted. Thank you, We will get back to you soon!</p>
+                </div>
+              </transition>
+            </div>
+            <div class="col-md-12">
+              <transition name="fade">
+                <div class="alert alert-error" v-if="sendStatus.error">
+                  <p>Contact form unsuccessfully submitted. There is a problem with server!</p>
+                </div>
+              </transition>
+            </div>
             <div class="col-md-6">
               <div class="form-group">
                 <input type="text" placeholder="Your Name" v-model="fields.name" v-bind:class="{'error': errors.name}">
@@ -130,6 +144,10 @@ export default {
         address: "",
         phone: "",
         message: ""
+      },
+      sendStatus: {
+        error: false,
+        success: false,
       }
     }
   },
@@ -166,9 +184,24 @@ export default {
           for (let key in this.errors) {
             this.errors[key] = "";
           }
+
+          //Success alert
+
+          this.sendStatus.success = true;
+
+          setTimeout(() => {
+            this.sendStatus.success = false;
+          }, 4000);
         })
         .catch(error => {
           console.log(error);
+
+          //Error alert
+          this.sendStatus.error = true;
+
+          setTimeout(() => {
+            this.sendStatus.error = false;
+          }, 4000);
         });
       }
 
