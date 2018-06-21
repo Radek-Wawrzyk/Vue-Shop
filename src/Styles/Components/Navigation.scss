@@ -4,6 +4,8 @@ $navigationBackground: white;
 $navigationForeground: gray;
 $navigationHoverForeground: black;
 
+$hamburgerColor: #333;
+
 nav
 {
     background: $navigationBackground;
@@ -15,8 +17,6 @@ nav
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 0 60px;
 }
 
 .navigation-brand{
@@ -25,13 +25,15 @@ nav
 
 .navigation-menu {
     list-style-type: none;
+    position: fixed;
 
-    > li {
+    .navigation-item{
         display: inline-block;
         position: relative;
         padding: 0 20px;
         font-size: 18px;
         text-transform: uppercase;
+
         line-height: $navigationHeight;
         color: $navigationForeground;
 
@@ -45,7 +47,39 @@ nav
     }
 }
 
-.navigation-icons
+.hamburger-segment {
+    background-color: $hamburgerColor;
+
+    width: 35px;
+    height: 5px;
+    margin: 6px 0;
+}
+
+.navigation-hamburger {
+    visibility: hidden;
+}
+
+@media(max-width: 580px)
 {
-    background:blue;
+    .navigation-menu
+    {
+        visibility: hidden;
+        background-color: $navigationBackground;
+        width: 100%;
+    }
+    .navigation-hamburger
+    {
+        visibility: visible;
+    }
+    .navigation-item
+    {
+        width: 100%;
+        text-align: center;
+    }
+    .toggled {
+        height: 700px;
+        visibility: visible;
+        margin-top: 400px;
+        z-index: 2;
+    }
 }

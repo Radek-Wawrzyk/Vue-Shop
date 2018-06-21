@@ -3,14 +3,16 @@
         <div class="navigation-brand">
 
         </div>
-        <ul class="navigation-menu">
-            <li><a href="#">Home </a></li>
-            <li><a href="#">Shop </a></li>
-            <li><a href="#">About </a></li>
-            <li><a href="#">Contact </a></li>
+        <ul v-bind:class="{'toggled': isToggled}" class="navigation-menu">
+            <li class="navigation-item"><a href="#">Home </a></li>
+            <li class="navigation-item"><a href="#">Shop </a></li>
+            <li class="navigation-item"><a href="#">About </a></li>
+            <li class="navigation-item"><a href="#">Contact </a></li>
         </ul>
-        <div class="navigation-icons">
-
+        <div v-on:click="toggle" class="navigation-hamburger">
+            <div class="hamburger-segment"></div>
+            <div class="hamburger-segment"></div>
+            <div class="hamburger-segment"></div>
         </div>
     </nav>
 </template>
@@ -20,5 +22,19 @@
 </style>
 
 <script>
-    export default {}
+    export default
+        {
+            data() {
+                return {
+                    isToggled: false
+                };
+            },
+            methods:
+            {
+                toggle: function ()
+                {
+                    this.isToggled = !this.isToggled;
+                }
+            }
+        }
 </script>
