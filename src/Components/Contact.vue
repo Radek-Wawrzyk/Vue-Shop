@@ -19,7 +19,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" placeholder="Your Name" v-model="fields.name">
+              <input type="text" placeholder="Your Name" v-model="fields.name" v-bind:class="{'error': errors.name}">
               <transition name="fade-form">
                 <p class="form-error" v-if="errors.name">{{errors.name}}</p>
               </transition>
@@ -27,7 +27,7 @@
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <input type="email" placeholder="Your Email" v-model="fields.email">
+              <input type="email" placeholder="Your Email" v-model="fields.email" v-bind:class="{'error': errors.email}">
               <transition name="fade-form">
                 <p class="form-error" v-if="errors.email">{{errors.email}}</p>
               </transition>
@@ -35,7 +35,7 @@
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" placeholder="Your Address" v-model="fields.address">
+              <input type="text" placeholder="Your Address" v-model="fields.address" v-bind:class="{'error': errors.address}">
               <transition name="fade-form">
                 <p class="form-error" v-if="errors.address">{{errors.address}}</p>
               </transition>
@@ -43,7 +43,7 @@
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" placeholder="Your Phone" v-model="fields.phone">
+              <input type="text" placeholder="Your Phone" v-model="fields.phone" v-bind:class="{'error': errors.phone}">
               <transition name="fade-form">
                 <p class="form-error" v-if="errors.phone">{{errors.phone}}</p>
               </transition>
@@ -51,7 +51,7 @@
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <textarea placeholder="Your Message" rows="9" v-model="fields.message"></textarea>
+              <textarea placeholder="Your Message" rows="9" v-model="fields.message" v-bind:class="{'error': errors.message}"></textarea>
               <transition name="fade-form">
                 <p class="form-error" v-if="errors.message">{{errors.message}}</p>
               </transition>
@@ -67,6 +67,8 @@
 </template>
 
 <script>
+
+import axios from "axios";
 
 export default {
   name: "Contact",
@@ -94,13 +96,38 @@ export default {
 
       console.log(this.fields);
 
+      //Regex conditions
       const checkEmail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
       const checkPhone = /^[0-9\+]{8,13}$/;
 
       //Main condition
       if ( this.fields.name.length >= 1 && this.fields.address.length >= 1 && this.fields.message.length >= 1 && checkEmail.test(this.fields.email) && checkPhone.test(this.fields.phone) ) {
         console.log("form submited!");
-      } else console.log("form not submited!");
+        JSON.stringify(this.fields);
+
+        //Send request to API
+        axios.post("address from API", {
+          name: this.fields.name,
+          address: this.fields.address,
+          message: this.fields.message,
+          email: this.fields.email,
+          phone: this.fields.phone,
+        })
+        .then(response => {
+          console.log(response);
+
+          //Reset fields and Errors
+          for (let key in this.fields) {
+            this.fields[key] = "";
+          }
+          for (let key in this.errors) {
+            this.errors[key] = "";
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      }
 
       //Validation fields
       this.fields.name.length >= 1 ? this.errors.name = "" : this.errors.name = "Please fill Name";

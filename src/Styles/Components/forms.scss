@@ -12,6 +12,9 @@ input,textarea,select {
   &::placeholder {
     color: $greyMedium;
   }
+  &.error:focus {
+    border-color: $errorLight;
+  }
 }
 textarea {
   resize: vertical;
@@ -32,4 +35,7 @@ textarea {
   bottom: -20px;
   color: $error;
   font-size: 13px;
+}
+.error {
+  border-color: $red;
 }
