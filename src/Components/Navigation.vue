@@ -9,11 +9,11 @@
             <li class="navigation-item"><a href="#">About </a></li>
             <li class="navigation-item"><a href="#">Contact </a></li>
         </ul>
-        <div v-on:click="toggle" class="navigation-hamburger">
+        <button v-on:click="toggle" class="navigation-hamburger">
             <div class="hamburger-segment"></div>
             <div class="hamburger-segment"></div>
             <div class="hamburger-segment"></div>
-        </div>
+        </button>
     </nav>
 </template>
 
