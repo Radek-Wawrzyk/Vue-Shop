@@ -219,6 +219,6 @@ export default {
 
 <style lang="scss">
 
-@import "../Styles/Components/contact";
+@import "../Styles/Pages/contact";
 
 </style>

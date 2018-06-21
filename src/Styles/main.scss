@@ -1,20 +1,15 @@
-//Colors
-@import "./Components/colors";
+//Settings
+@import "./Settings/Typography";
+@import "./Settings/Colors";
+@import "./Settings/Layout";
 
-//Typography
-@import "./Components/typography";
-
-//Forms
+//Components
+@import "./Components/Buttons";
+@import "./Components/Alerts";
 @import "./Components/forms";
 
 //Animations
-@import "./Components/Animations";
+@import "./Animations/Animations";
 
-//Layout
-@import "./Components/Layout";
 
-//Buttons
-@import "./Components/Buttons";
 
-//Alerts
-@import "./Components/Alerts";
