@@ -1,5 +1,7 @@
-$navigationHeight: 115px;
+$navigationHeight: 70px;
 $navigationBackground: white;
+
+$navigationHeightSmall: 60px;
 
 $navigationForeground: gray;
 $navigationHoverForeground: black;
@@ -62,13 +64,19 @@ nav
 
 @media(max-width: 580px)
 {
+    .navigation-container
+    {
+        height: $navigationHeightSmall;
+    }
+
     .navigation-menu
     {
         visibility: hidden;
         background-color: $navigationBackground;
         width: 100%;
         position:absolute;
-        top: $navigationHeight;
+        top: $navigationHeightSmall;
+        height:100vh;
     }
     .navigation-hamburger
     {
