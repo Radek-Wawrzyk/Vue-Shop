@@ -17,6 +17,9 @@ nav
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 102;
 }
 
 .navigation-brand{
@@ -25,19 +28,17 @@ nav
 
 .navigation-menu {
     list-style-type: none;
-    position: fixed;
 
-    .navigation-item{
+    .navigation-item {
         display: inline-block;
         position: relative;
         padding: 0 20px;
         font-size: 18px;
         text-transform: uppercase;
-
         line-height: $navigationHeight;
         color: $navigationForeground;
 
-        >a {
+        > a {
             cursor: pointer;
         }
 
@@ -56,7 +57,7 @@ nav
 }
 
 .navigation-hamburger {
-    visibility: hidden;
+    display: none;
 }
 
 @media(max-width: 580px)
@@ -66,10 +67,12 @@ nav
         visibility: hidden;
         background-color: $navigationBackground;
         width: 100%;
+        position:absolute;
+        top: $navigationHeight;
     }
     .navigation-hamburger
     {
-        visibility: visible;
+        display: block;
     }
     .navigation-item
     {
@@ -77,9 +80,6 @@ nav
         text-align: center;
     }
     .toggled {
-        height: 700px;
         visibility: visible;
-        margin-top: 400px;
-        z-index: 2;
     }
 }
