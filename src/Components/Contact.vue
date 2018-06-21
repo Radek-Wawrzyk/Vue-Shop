@@ -18,20 +18,34 @@
       <form class="contact-form">
         <div class="row">
           <div class="col-md-6">
-            <input type="text" placeholder="Your Name" v-model="fields.name">
-            <p>{{errors.name}}</p>
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" v-model="fields.name">
+              <p class="form-error">{{errors.name}}</p>
+            </div>
           </div>
           <div class="col-md-6">
-            <input type="email" placeholder="Your Email" v-model="fields.email">
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" v-model="fields.email">
+              <p class="form-error">{{errors.email}}</p>
+            </div>
           </div>
           <div class="col-md-6">
-            <input type="text" placeholder="Your Address" v-model="fields.address">
+            <div class="form-group">
+              <input type="text" placeholder="Your Address" v-model="fields.address">
+              <p class="form-error">{{errors.address}}</p>
+            </div>
           </div>
           <div class="col-md-6">
-            <input type="text" placeholder="Your Phone" v-model="fields.phone">
+            <div class="form-group">
+              <input type="text" placeholder="Your Phone" v-model="fields.phone">
+              <p class="form-error">{{errors.phone}}</p>
+            </div>
           </div>
           <div class="col-md-12">
-            <textarea placeholder="Your Message" rows="9" v-model="fields.message"></textarea>
+            <div class="form-group">
+              <textarea placeholder="Your Message" rows="9" v-model="fields.message"></textarea>
+              <p class="form-error">{{errors.message}}</p>
+            </div>
           </div>
           <div class="col-md-12">
             <button type="submit" @click="formValidate" >Send Message</button>
@@ -67,10 +81,21 @@ export default {
   methods: {
     formValidate(event) {
       event.preventDefault();
+
       console.log(this.fields);
 
-      /*It's gonna be in html code -> */this.fields.name.length >= 1 ? this.errors.name = "" : this.errors.name = "Please fill Name";
+      const checkEmail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      const checkPhone = /^[0-9\+]{8,13}$/;
 
+      if ( this.fields.name.length >= 1 && this.fields.address.length >= 1 && this.fields.message.length >= 1 && checkEmail.test(this.fields.email) && checkPhone.test(this.fields.phone) ) {
+        console.log("form submited!");
+      } else console.log("form not submited!");
+
+      this.fields.name.length >= 1 ? this.errors.name = "" : this.errors.name = "Please fill Name";
+      this.fields.address.length >= 1 ? this.errors.address = "" : this.errors.address = "Please fill Address";
+      this.fields.message.length >= 1 ? this.errors.message = "" : this.errors.message = "Please fill Message";
+      checkEmail.test(this.fields.email) ? this.errors.email = "" : this.errors.email = "Bad Email address or blank";
+      checkPhone.test(this.fields.phone) ? this.errors.phone = "" : this.errors.phone = "Bad Phone number or blank";
     }
   }
 }

@@ -2,7 +2,6 @@ input,textarea,select {
   display: block;
   width: 100%;
   padding: 12px 20px;
-  margin: 0 0 30px 0;
   border: 1px solid $greyLight;
   transition: border 0.25s;
   font-family: 'Montserrat', sans-serif;
@@ -16,4 +15,18 @@ input,textarea,select {
 }
 textarea {
   resize: vertical;
+}
+
+//Form group
+
+.form-group {
+  margin: 0 0 24px 0;
+}
+
+//Forms errors
+
+.form-error {
+  color: $error;
+  font-size: 13px;
+  margin: 8px 0 0 0;
 }
