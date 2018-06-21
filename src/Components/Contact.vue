@@ -100,7 +100,7 @@
               </div>
             </div>
             <div class="col-md-12">
-              <button type="submit" @click="formValidate" >Send Message</button>
+              <button class="btn" type="submit" @click="formValidate" >Send Message</button>
             </div>
           </div>
         </form>
