@@ -1,7 +1,60 @@
+@import "colors";
+
 .contact-header {
   margin: 100px 0 50px 0;
   text-align: center;
 }
 .contact-title {
   margin: 0 0 20px 0;
+}
+
+//Contact Map
+
+.contact-map {
+  height: 70vh;
+  filter: grayscale(90%);
+  z-index: 1;
+  position: relative;
+}
+
+//Contact tiles
+
+.contact-info {
+  margin: -50px 0 0 0;
+  position: relative;
+  z-index: 2;
+  background: white;
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.15);
+  padding: 40px 50px;
+}
+.contact-tile {
+  display: flex;
+  align-items: center;
+  svg {
+    fill: $gold;
+    width: 30px;
+    height: 30px;
+  }
+  .contact-tile-text {
+    margin: 0 0 0 10px;
+  }
+}
+
+//Media 
+
+@media screen and (max-width: 991px) {
+  .contact-tile {
+    margin: 0 0 15px 0;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact-map {
+    height: 400px;
+    pointer-events: none;
+  }
+  .contact-header {
+    margin: 50px 0;
+  }
 }
