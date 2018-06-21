@@ -1,10 +1,8 @@
 <template>
-    <div id="app">
-        <header>
-            <Navigation />
-        </header>
-        <router-view />
-    </div>
+  <div id="app">            
+    <Navigation />
+    <router-view />
+  </div>
 </template>
 
 <style lang="scss">
