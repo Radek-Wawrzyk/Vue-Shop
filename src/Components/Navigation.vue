@@ -29,7 +29,8 @@
         {
             data() {
                 return {
-                    isToggled: false
+                    isToggled: false,
+                    body: document.querySelector('body')
                 };
             },
             methods:
@@ -37,6 +38,13 @@
                 toggle: function ()
                 {
                     this.isToggled = !this.isToggled;
+
+                    if (this.isToggled) {
+                        this.body.className = 'body-navbar-hidden';
+                    }
+                    else {
+                        this.body.className = '';
+                    }
                 }
             }
         }

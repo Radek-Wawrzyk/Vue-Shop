@@ -100,7 +100,7 @@ nav
     height: 50px;
 }
 
-@media(max-width: 580px)
+@media(max-width: 768px)
 {
     .navigation-container
     {
@@ -131,5 +131,6 @@ nav
     }
     .toggled {
         visibility: visible;
+        overflow-y: hidden;
     }
 }
