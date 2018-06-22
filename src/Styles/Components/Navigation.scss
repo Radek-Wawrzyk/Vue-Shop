@@ -17,7 +17,7 @@ nav
 .navigation-container
 {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     position: fixed;
     left: 0;
@@ -27,44 +27,77 @@ nav
 }
 
 .navigation-brand{
-    background:red;
+    background: url('../assets/logo.png') no-repeat;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
 }
 
 .navigation-menu {
     list-style-type: none;
+}
 
-    .navigation-item {
-        display: inline-block;
-        position: relative;
-        padding: 0 20px;
-        font-size: 18px;
-        text-transform: uppercase;
-        line-height: $navigationHeight;
-        color: $navigationForeground;
+.navigation-item {
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: $navigationHeight;
+    color: $navigationForeground;
 
-        > a {
-            cursor: pointer;
-        }
+    > a {
+        cursor: pointer;
+    }
 
-        &:hover {
-            color: $navigationHoverForeground;
-        }
+    &:hover {
+        color: $navigationHoverForeground;
     }
 }
 
 .hamburger-segment {
     background-color: $hamburgerColor;
-
     width: 35px;
     height: 5px;
     margin: 6px 0;
+    display: block;
+    position: relative;
+
+    &:before {
+        background-color: $hamburgerColor;
+        width: 100%;
+        height: 5px;
+        display: block;
+        content: '';
+        top: -12px;
+        position: absolute;
+    }
+
+    &:after {
+        background-color: $hamburgerColor;
+        width: 100%;
+        height: 5px;
+        display: block;
+        content: '';
+        top: 12px;
+        position: absolute;
+    }
 }
 
 .navigation-hamburger {
-    display: none;
+    visibility: hidden;
+}
+
+.navigation-hamburger, .navigation-cart {
     background: none;
     border: none;
     outline: none;
+}
+
+.navigation-cart
+{
+    width: 50px;
+    height: 50px;
 }
 
 @media(max-width: 580px)
@@ -72,6 +105,11 @@ nav
     .navigation-container
     {
         height: $navigationHeightSmall;
+    }
+
+    .navigation-brand {
+        width: 40px;
+        height: 40px;
     }
 
     .navigation-menu
@@ -83,14 +121,13 @@ nav
         top: $navigationHeightSmall;
         height:100vh;
     }
-    .navigation-hamburger
-    {
-        display: block;
+    .navigation-hamburger {
+        visibility: visible;
     }
-    .navigation-item
-    {
+    .navigation-item {
         width: 100%;
         text-align: center;
+        padding: 15px 0;
     }
     .toggled {
         visibility: visible;
