@@ -116,10 +116,15 @@ nav
     {
         visibility: hidden;
         background-color: $navigationBackground;
+
         width: 100%;
-        position:absolute;
+        position:fixed;
         top: $navigationHeightSmall;
-        height:100vh;
+        bottom: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     .navigation-hamburger {
         display: block
@@ -127,7 +132,13 @@ nav
     .navigation-item {
         width: 100%;
         text-align: center;
-        padding: 15px 0;
+        font-size: 100%;
+        vertical-align: middle;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .toggled {
         visibility: visible;
