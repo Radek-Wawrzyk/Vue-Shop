@@ -98,6 +98,28 @@ nav
 {
     width: 50px;
     height: 50px;
+    position: relative;
+    border-radius: 10px;
+
+    &:hover
+    {
+        background-color: lightgray;
+    }
+}
+
+.cart-shopping
+{
+    width:300px;
+    position: absolute;
+    display: none;
+}
+
+.cartToggled
+{
+    top: 75px;
+    background-color: white;
+}
+
 .mobile-visible
 {
     display: none;
@@ -149,6 +171,7 @@ nav
         display: flex;
     }
 
+    .menuToggled {
         visibility: visible;
         overflow-y: hidden;
     }
