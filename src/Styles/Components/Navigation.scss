@@ -98,6 +98,9 @@ nav
 {
     width: 50px;
     height: 50px;
+.mobile-visible
+{
+    display: none;
 }
 
 @media(max-width: 768px)
@@ -127,7 +130,8 @@ nav
         justify-content: space-around;
     }
     .navigation-hamburger {
-        display: block
+        display: block;
+        order: 2;
     }
     .navigation-item {
         width: 100%;
@@ -140,8 +144,17 @@ nav
         align-items: center;
         justify-content: center;
     }
-    .toggled {
+
+    .mobile-visible {
+        display: flex;
+    }
+
         visibility: visible;
         overflow-y: hidden;
+    }
+
+    .navigation-cart
+    {
+        visibility: hidden;
     }
 }

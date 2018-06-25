@@ -8,6 +8,7 @@
             <li class="navigation-item"><router-link to="/shop">Shop </router-link></li>
             <li class="navigation-item"><router-link to="/about">About </router-link></li>
             <li class="navigation-item"><router-link to="/contact">Contact </router-link></li>
+            <li class="navigation-item mobile-visible"><router-link to="/cart">Cart </router-link></li>
         </ul>
         <button v-on:click="toggle" class="navigation-hamburger">
             <span class="hamburger-segment"/>
