@@ -1,6 +1,23 @@
+//Basic global buttons
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  background: inherit;
+  border: none;
+  color: $greyDark;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline-color: $gold;
+  }
+}
+
+//Typical buttons
+
 .btn {
   padding: 12px 16px;
-  font-family: 'Montserrat', sans-serif; 
   font-size: 15px;
   text-transform: uppercase;
   background: $greyDark;
@@ -8,9 +25,23 @@
   border: none;
   transition: background 0.25s, color 0.25s;
   &:hover, &:focus, &:active {
-    cursor: pointer;
     background: $gold;
     color: $greyDark;
     outline-color: $gold;
   }
+}
+.btn-light {
+  background: $gold;
+  &:hover, &:focus, &:active {
+    background: $greyDark;
+    color: $white;
+    outline-color: $gold;
+  }
+}
+
+//Helper classes
+
+.btn-center {
+  margin: 0 auto;
+  display: block;
 }
