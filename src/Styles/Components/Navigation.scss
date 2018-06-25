@@ -88,24 +88,23 @@ nav
     display: none;
 }
 
-.navigation-hamburger, .navigation-cart {
+.navigation-hamburger, .navigation-cart, .navigation-settings, .navigation-search {
     background: none;
     border: none;
     outline: none;
 }
 
-.navigation-cart
-{
+.navigation-cart, .navigation-settings, .navigation-search {
     width: 50px;
     height: 50px;
     position: relative;
     border-radius: 10px;
 
-    &:hover
-    {
+    &:hover {
         background-color: lightgray;
     }
 }
+
 
 .cart-shopping
 {
@@ -118,11 +117,6 @@ nav
 {
     top: 75px;
     background-color: white;
-}
-
-.mobile-visible
-{
-    display: none;
 }
 
 @media(max-width: 768px)
@@ -167,17 +161,8 @@ nav
         justify-content: center;
     }
 
-    .mobile-visible {
-        display: flex;
-    }
-
     .menuToggled {
         visibility: visible;
         overflow-y: hidden;
-    }
-
-    .navigation-cart
-    {
-        visibility: hidden;
     }
 }
