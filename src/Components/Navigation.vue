@@ -4,10 +4,10 @@
 
         </div>
         <ul v-bind:class="{'menuToggled': isMenuToggled}" class="navigation-menu">
-            <li class="navigation-item"><router-link to="/">Home </router-link></li>
-            <li class="navigation-item"><router-link to="/shop">Shop </router-link></li>
-            <li class="navigation-item"><router-link to="/about">About </router-link></li>
-            <li class="navigation-item"><router-link to="/contact">Contact </router-link></li>
+            <li v-on:click="toggleMenu" class="navigation-item"><router-link to="/">Home </router-link></li>
+            <li v-on:click="toggleMenu" class="navigation-item"><router-link to="/shop">Shop </router-link></li>
+            <li v-on:click="toggleMenu" class="navigation-item"><router-link to="/about">About </router-link></li>
+            <li v-on:click="toggleMenu" class="navigation-item"><router-link to="/contact">Contact </router-link></li>
         </ul>
 
         <div>
