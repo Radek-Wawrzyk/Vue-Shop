@@ -3,15 +3,17 @@ main {
   padding: 0 0 80px 0;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 //Media
 
 @media screen and (max-width: 768px) {
   main {
     margin: 60px 0 0 0;
   }
-
-  .body-navbar-hidden
-  {
-      overflow-y: hidden;
+  .body-navbar-hidden {
+    overflow-y: hidden;
   }
 }

@@ -1,7 +1,7 @@
 <template>
     <nav class="navigation-container">
         <div class="navigation-brand">
-
+            
         </div>
         <ul v-bind:class="{'menuToggled': isMenuToggled}" class="navigation-menu">
             <li v-on:click="toggleMenu" class="navigation-item"><router-link to="/">Home </router-link></li>
