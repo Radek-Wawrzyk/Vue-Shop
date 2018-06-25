@@ -1,8 +1,10 @@
 <template>
   <nav class="navigation-container">
-    <div class="navigation-brand">
-
-    </div>
+    <figure class="navigation-logo">
+      <router-link to="/">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpPB8zAHXMcSxKjEZNfym4sYcRVKFHoBJNwUGz-UBAjnV2w90fug" alt="logo">
+      </router-link>
+    </figure>
     <ul v-bind:class="{'menuToggled': isMenuToggled}" class="navigation-menu">
       <li v-on:click="toggleMenu" class="navigation-item">
         <router-link to="/">Home </router-link>
