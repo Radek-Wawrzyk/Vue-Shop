@@ -1,168 +1,148 @@
 $navigationHeight: 70px;
 $navigationBackground: white;
-
 $navigationHeightSmall: 60px;
-
-$navigationForeground: gray;
+$navigationForeground: grey;
 $navigationHoverForeground: black;
-
 $hamburgerColor: #333;
 
-nav
-{
-    background: $navigationBackground;
-    height: $navigationHeight;
+@import "../Settings/Colors";
+
+nav {
+  background: $navigationBackground;
+  height: $navigationHeight;
+}
+.navigation-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 102;
+}
+.navigation-brand {
+  background: url('../assets/logo.png') no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
 }
 
-.navigation-container
-{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 102;
-}
-
-.navigation-brand{
-    background: url('../assets/logo.png') no-repeat;
-    background-size: contain;
-    width: 60px;
-    height: 60px;
-}
+//Navigation Menu
 
 .navigation-menu {
-    list-style-type: none;
+  list-style-type: none;
+  transition: opacity 0.25s, visibility 0.25s;
 }
-
 .navigation-item {
-    display: inline-block;
-    position: relative;
-    padding: 0 20px;
-    font-size: 18px;
-    text-transform: uppercase;
-    line-height: $navigationHeight;
-    color: $navigationForeground;
-
-    > a {
-        cursor: pointer;
-    }
-
-    &:hover {
-        color: $navigationHoverForeground;
-    }
+  display: inline-block;
+  position: relative;
+  padding: 0 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: $navigationHeight;
+  color: $navigationForeground;
+  >a {
+    cursor: pointer;
+  }
+  &:hover {
+    color: $navigationHoverForeground;
+  }
 }
+
+//Navigation Button
 
 .hamburger-segment {
+  background-color: $hamburgerColor;
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  display: block;
+  position: relative;
+  &:before {
     background-color: $hamburgerColor;
-    width: 35px;
+    width: 100%;
     height: 5px;
-    margin: 6px 0;
     display: block;
-    position: relative;
-
-    &:before {
-        background-color: $hamburgerColor;
-        width: 100%;
-        height: 5px;
-        display: block;
-        content: '';
-        top: -12px;
-        position: absolute;
-    }
-
-    &:after {
-        background-color: $hamburgerColor;
-        width: 100%;
-        height: 5px;
-        display: block;
-        content: '';
-        top: 12px;
-        position: absolute;
-    }
-}
-
-.navigation-hamburger {
-    display: none;
-}
-
-.navigation-hamburger, .navigation-cart, .navigation-settings, .navigation-search {
-    background: none;
-    border: none;
-    outline: none;
-}
-
-.navigation-cart, .navigation-settings, .navigation-search {
-    width: 50px;
-    height: 50px;
-    position: relative;
-    border-radius: 10px;
-
-    &:hover {
-        background-color: lightgray;
-    }
-}
-
-
-.cart-shopping
-{
-    width:300px;
+    content: '';
+    top: -12px;
     position: absolute;
-    display: none;
+  }
+  &:after {
+    background-color: $hamburgerColor;
+    width: 100%;
+    height: 5px;
+    display: block;
+    content: '';
+    top: 12px;
+    position: absolute;
+  }
+}
+.navigation-hamburger {
+  display: none;
 }
 
-.cartToggled
-{
-    top: 75px;
-    background-color: white;
+//Navigation icons
+
+.navigation-icons {
+  display: flex;
+}
+.navigation-icons-item {
+  margin: 0 2px;
+}
+.navigation-icon {
+  width: 30px;
+  height: 30px;
+  svg {
+    fill: $greyLight;
+    transition: fill 0.25s;
+  }
+  &:hover, &:focus {
+    svg {
+      fill: $gold;
+    }
+  }
 }
 
-@media(max-width: 768px)
-{
-    .navigation-container
-    {
-        height: $navigationHeightSmall;
-    }
+//Media
 
-    .navigation-brand {
-        width: 40px;
-        height: 40px;
-    }
-
-    .navigation-menu
-    {
-        visibility: hidden;
-        background-color: $navigationBackground;
-
-        width: 100%;
-        position:fixed;
-        top: $navigationHeightSmall;
-        bottom: 0;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .navigation-hamburger {
-        display: block;
-        order: 2;
-    }
-    .navigation-item {
-        width: 100%;
-        text-align: center;
-        font-size: 100%;
-        vertical-align: middle;
-        height: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .menuToggled {
-        visibility: visible;
-        overflow-y: hidden;
-    }
+@media(max-width: 768px) {
+  .navigation-container {
+    height: $navigationHeightSmall;
+  }
+  .navigation-brand {
+    width: 40px;
+    height: 40px;
+  }
+  .navigation-menu {
+    visibility: hidden;
+    background-color: $navigationBackground;
+    width: 100%;
+    position: fixed;
+    top: $navigationHeightSmall;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0;
+  }
+  .navigation-hamburger {
+    display: block;
+    order: 2;
+  }
+  .navigation-item {
+    width: 100%;
+    text-align: center;
+    font-size: 100%;
+    vertical-align: middle;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menuToggled {
+    visibility: visible;
+    overflow-y: hidden;
+    opacity: 1;
+  }
 }
