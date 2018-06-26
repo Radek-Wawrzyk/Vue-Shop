@@ -73,7 +73,7 @@ nav {
     height: 5px;
     display: block;
     content: '';
-    top: -12px;
+    top: -10px;
     position: absolute;
   }
   &:after {
@@ -82,7 +82,7 @@ nav {
     height: 5px;
     display: block;
     content: '';
-    top: 12px;
+    top: 10px;
     position: absolute;
   }
 }
@@ -130,10 +130,47 @@ nav {
     justify-content: space-around;
     opacity: 0;
   }
-  .navigation-hamburger {
-    display: block;
-    order: 2;
-  }
+    .navigation-hamburger {
+        display: table-cell;
+        vertical-align: middle;
+        outline: none;
+
+        &.active {
+            .hamburger-segment {
+                background: transparent;
+
+                &:before {
+                    transform: rotate(-45deg) translateY(300%);
+                    transition-property: transform;
+                    transition-duration: 0.5s;
+                }
+
+                &:after {
+                    transform: rotate(45deg) translateY(-300%);
+                    transition-property: transform;
+                    transition-duration: 0.5s;
+                }
+            }
+        }
+
+        .hamburger-segment {
+            background: $hamburgerColor;
+            transition-property: background;
+            transition-duration: 0.5s;
+
+            &:before {
+                transform: rotate(0) translateY(0);
+                transition-property: transform;
+                transition-duration: 0.5s;
+            }
+
+            &:after {
+                transform: rotate(0) translateY(0);
+                transition-property: transform;
+                transition-duration: 0.5s;
+            }
+        }
+    }
   .navigation-item {
     width: 100%;
     text-align: center;
@@ -146,7 +183,6 @@ nav {
   }
   .menuToggled {
     visibility: visible;
-    overflow-y: hidden;
     opacity: 1;
   }
 }
