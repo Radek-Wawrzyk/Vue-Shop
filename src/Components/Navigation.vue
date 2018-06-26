@@ -31,9 +31,57 @@
             </button>
         </li>
         <li class="navigation-icons-item">
-            <button class="navigation-icon">
+            <button v-bind:class="{'active' : isCartToggled}" v-on:click="toggleCart" class="navigation-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z" /></svg>
             </button>
+            <div v-if="isCartToggled" class="cart-dropdown">
+                <ul class="cart-list">
+                    <li class="cart-item">
+                        <img class="product-photo" src="http://placehold.it/50x50" />
+                        <div class="item-content">
+                            <label>Crackle Plates</label>
+                            <p>22.50$</p>
+                            <p>x2</p>
+                        </div>
+                        <button class="button-close" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z" /></svg>
+                        </button>
+                    </li>
+                    <li class="cart-item">
+                        <img class="product-photo" src="http://placehold.it/50x50" />
+                        <div class="item-content">
+                            <label>Crackle Plates</label>
+                            <p>22.50$</p>
+                            <p>x2</p>
+                        </div>
+                        <button class="button-close" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z" /></svg>
+                        </button>
+                    </li>
+                    <li class="cart-item">
+                        <img class="product-photo" src="http://placehold.it/50x50" />
+                        <div class="item-content">
+                            <label>Crackle Plates</label>
+                            <p>22.50$</p>
+                            <p>x2</p>
+                        </div>
+                        <button class="button-close" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z" /></svg>
+                        </button>
+                    </li>
+                </ul>
+                <div class="shopping-summary">
+                    <div class="summary-line">
+                        <label>Subtotal</label>
+                        <label>$481.00</label>
+                    </div>
+                    <div class="summary-line">
+                        <label>Total</label>
+                        <label>$481.00</label>
+                    </div>
+                </div>
+                <button class="cart-submit" type="button">Checkout</button>
+            </div>
         </li>
         <li class="navigation-icons-item">
             <button class="navigation-icon">
@@ -57,7 +105,7 @@ export default {
     return {
       isMenuToggled: false,
       isCartToggled: false,
-      body: document.querySelector('body')
+      body: document.querySelector('body'),
     };
   },
   methods: {
