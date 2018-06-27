@@ -256,13 +256,17 @@ nav {
                 background: transparent;
 
                 &:before {
-                    transform: rotate(-45deg) translateY(300%);
+                    left: 0;
+                    top:0;
+                    transform: rotate(-45deg);
                     transition-property: transform;
                     transition-duration: 0.5s;
                 }
 
                 &:after {
-                    transform: rotate(45deg) translateY(-300%);
+                    left: 0;
+                    top: 0;
+                    transform: rotate(45deg);
                     transition-property: transform;
                     transition-duration: 0.5s;
                 }
@@ -275,13 +279,13 @@ nav {
             transition-duration: 0.5s;
 
             &:before {
-                transform: rotate(0) translateY(0);
+                transform: rotate(0);
                 transition-property: transform;
                 transition-duration: 0.5s;
             }
 
             &:after {
-                transform: rotate(0) translateY(0);
+                transform: rotate(0);
                 transition-property: transform;
                 transition-duration: 0.5s;
             }
