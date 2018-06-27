@@ -4,7 +4,11 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9">
-          <ShopProduct></ShopProduct>
+          <section class="products">
+            <div class="row">
+              <ShopProduct v-for="product in products" :key="product.id" v-bind:product="product"></ShopProduct>
+            </div>
+          </section>
         </div>
         <div class="col-md-3">
           <ShopFilters></ShopFilters>
@@ -26,6 +30,11 @@ export default {
     ShopFilters,
     ShopProduct,
     ShopHeader
+  },
+  computed: {
+    products () {
+      return this.$store.state.products;
+    }
   }
 }
 
