@@ -101,6 +101,14 @@ nav {
 .navigation-icon {
   width: 30px;
   height: 30px;
+
+  &.active
+  {
+      svg {
+        fill: $greyLight;
+      }
+  }
+
   svg {
     fill: $greyLight;
     transition: fill 0.25s;
@@ -112,13 +120,13 @@ nav {
   }
 }
 
-//Navigation Dropdown
+//Cart Dropdown
 
 .cart-dropdown
 {
     position: absolute;
     top: $navigationHeight;
-    background: $white;
+    background: #F5F5F5;
     right: 30px;
 
     display: flex;
@@ -128,7 +136,7 @@ nav {
     &::before
     {
         height: 5px;
-        background: brown;
+        background: $gold;
         width: 100%;
         content: '';
         display: block;
@@ -185,15 +193,41 @@ nav {
         width: 100%;
         flex-direction: row;
         justify-content: space-around;
+
+        text-align: left;
     }
+}
+
+.price-caption
+{
+    display:block;
+    width:50%;
 }
 
 .cart-submit
 {
     height: 60px;
     margin: 10px;
-    background: $gold;
+    background: $greyDark;
+    color: white;
+    font-weight: 900;
+
+    &:hover
+    {
+        background: $gold;
+    }
 }
+
+.item-quantity, .price-total
+{
+    color:red;
+}
+
+.price-caption, .price-subtotal, .price-total
+{
+    font-weight: bold;
+}
+
 //Media
 
 @media(max-width: 768px) {
