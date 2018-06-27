@@ -40,6 +40,8 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
+
+@import "@/Styles/Pages/Shop.scss";
 
 </style>
