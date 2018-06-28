@@ -1,10 +1,13 @@
 <template>
-  <main>
+  <main id="products">
     <ShopHeader></ShopHeader>
     <div class="container">
       <div class="row">
         <div class="col-md-9">
           <section class="products">
+            <header class="products-header">
+              <h3 class="products-header-title">Products</h3>
+            </header>
             <div class="row">
               <ShopProduct v-for="product in products" :key="product.id" v-bind:product="product"></ShopProduct>
             </div>
