@@ -1,4 +1,5 @@
 input,textarea,select {
+  position: relative;
   display: block;
   width: 100%;
   padding: 12px 20px;
@@ -20,6 +21,21 @@ textarea {
   resize: vertical;
 }
 
+//Search input
+
+.search-input {
+  position: relative;
+  svg {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    fill: $greyLight;
+  }
+}
+
 //Form group
 
 .form-group {
@@ -38,4 +54,61 @@ textarea {
 }
 .error {
   border-color: $red;
+}
+
+//Form checkbox
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  width: 0;
+  & + label {
+    position: relative;
+    cursor: pointer;
+  }
+  & + label::before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+    transition: background 0.25s;
+    border: 1px solid $gold;
+  }
+  & + label::after {
+    content: '✔';
+    font-size: 14px;
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  &:hover + label::before {
+    background: $gold;
+  }
+  &:hover + label::after {
+    background: $gold;
+  }
+  &:focus + label::before {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.12);
+  }
+  &:checked + label::before {
+    background: $gold;
+  }
+  &:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+  &:checked + label::after {
+    opacity: 1;
+  }
+  &:disabled + label::before {
+    box-shadow: none;
+    background: #ddd;
+  }
 }
