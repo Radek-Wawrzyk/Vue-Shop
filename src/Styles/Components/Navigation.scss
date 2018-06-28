@@ -10,13 +10,15 @@ $hamburgerColor: #333;
 nav {
     background: $navigationBackground;
     height: $navigationHeight;
+    box-shadow: 0 4px 6px -6px rgba(34, 34, 34, 0.6);
 }
 
 .navigation-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
+    padding: 0 80px;
     left: 0;
     top: 0;
     width: 100%;
@@ -54,7 +56,7 @@ nav {
     font-size: 18px;
     text-transform: uppercase;
     line-height: $navigationHeight;
-    color: $navigationForeground;
+    color: $greyDark;
 
     > a {
         cursor: pointer;
@@ -116,12 +118,12 @@ nav {
 
     &.active {
         svg {
-            fill: $greyLight;
+            fill: $gold;
         }
     }
 
     svg {
-        fill: $greyLight;
+        fill: $greyDark;
         transition: fill 0.25s;
     }
 
@@ -223,10 +225,16 @@ nav {
 }
 
 //Media
+@media screen and (max-width: 1280px) {
+    .navigation-container {
+        padding: 0 40px;
+    }
+}
 
-@media(max-width: 768px) {
+@media screen and (max-width: 768px) {
     .navigation-container {
         height: $navigationHeightSmall;
+        padding: 0 15px;
     }
 
     .navigation-menu {
