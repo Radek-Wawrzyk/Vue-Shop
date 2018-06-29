@@ -134,9 +134,8 @@ nav {
   }
 }
 
-//Cart Dropdown
-
-.cart-dropdown {
+//Navigation Dropdowns
+.cart-dropdown, .settings-dropdown {
   position: absolute;
   top: $navigationHeight;
   background: #F5F5F5;
@@ -154,7 +153,7 @@ nav {
   }
 }
 
-.cart-list {
+.cart-list, .settings-list {
   display: flex;
   flex-direction: column;
   padding: 30px;
@@ -223,6 +222,28 @@ nav {
 .price-caption, .price-subtotal, .price-total {
   font-weight: bold;
 }
+
+.settings-item {
+  padding: 5px;
+
+  &::after {
+    background-color: $gold;
+    width: 0;
+    height: 2px;
+    display: block;
+    content: '';
+  }
+
+  &:hover {
+    color: $gold;
+
+    &::after {
+      width: 100%;
+      transition: width 0.5s;
+    }
+  }
+}
+
 
 //Media
 @media screen and (max-width: 1280px) {
@@ -312,7 +333,7 @@ nav {
     opacity: 1;
   }
 
-  .cart-dropdown {
+  .cart-dropdown,.settings-dropdown {
     display: none;
   }
 }
