@@ -8,311 +8,311 @@ $hamburgerColor: #333;
 @import "../Settings/Colors";
 
 nav {
-    background: $navigationBackground;
-    height: $navigationHeight;
-    box-shadow: 0 4px 6px -6px rgba(34, 34, 34, 0.6);
+  background: $navigationBackground;
+  height: $navigationHeight;
+  box-shadow: 0 4px 6px -6px rgba(34, 34, 34, 0.6);
 }
 
 .navigation-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    padding: 0 80px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 102;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 0 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 102;
 }
 
 .navigation-logo {
-    width: 140px;
+  width: 140px;
+  height: 100%;
+
+  a {
+    width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+  }
 
-    a {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
-    }
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 //Navigation Menu
 
 .navigation-menu {
-    list-style-type: none;
-    transition: opacity 0.25s, visibility 0.25s;
+  list-style-type: none;
+  transition: opacity 0.25s, visibility 0.25s;
 }
 
 .navigation-item {
-    display: inline-block;
-    position: relative;
-    padding: 0 20px;
-    font-size: 18px;
-    text-transform: uppercase;
-    line-height: $navigationHeight;
-    color: $greyDark;
+  display: inline-block;
+  position: relative;
+  padding: 0 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: $navigationHeight;
+  color: $greyDark;
 
-    > a {
-        cursor: pointer;
-    }
+  > a {
+    cursor: pointer;
+  }
 
-    &:hover {
-        color: $navigationHoverForeground;
-    }
+  &:hover {
+    color: $navigationHoverForeground;
+  }
 }
 
 //Navigation Button
 
 .hamburger-segment {
+  background-color: $hamburgerColor;
+  width: 25px;
+  height: 2px;
+  margin: 6px 0;
+  display: block;
+  position: relative;
+
+  &:before {
     background-color: $hamburgerColor;
-    width: 25px;
+    width: 100%;
     height: 2px;
-    margin: 6px 0;
     display: block;
-    position: relative;
+    content: '';
+    top: -5px;
+    position: absolute;
+  }
 
-    &:before {
-        background-color: $hamburgerColor;
-        width: 100%;
-        height: 2px;
-        display: block;
-        content: '';
-        top: -5px;
-        position: absolute;
-    }
-
-    &:after {
-        background-color: $hamburgerColor;
-        width: 100%;
-        height: 2px;
-        display: block;
-        content: '';
-        top: 5px;
-        position: absolute;
-    }
+  &:after {
+    background-color: $hamburgerColor;
+    width: 100%;
+    height: 2px;
+    display: block;
+    content: '';
+    top: 5px;
+    position: absolute;
+  }
 }
 
 .navigation-hamburger {
-    display: none;
+  display: none;
 }
 
 //Navigation icons
 
 .navigation-icons {
-    display: flex;
+  display: flex;
 }
 
 .navigation-icons-item {
-    margin: 0 2px;
+  margin: 0 2px;
 }
 
 .navigation-icon {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 
-    &.active {
-        svg {
-            fill: $gold;
-        }
-    }
-
+  &.active {
     svg {
-        fill: $greyDark;
-        transition: fill 0.25s;
+      fill: $gold;
     }
+  }
 
-    &:hover, &:focus {
-        svg {
-            fill: $gold;
-        }
+  svg {
+    fill: $greyDark;
+    transition: fill 0.25s;
+  }
+
+  &:hover, &:focus {
+    svg {
+      fill: $gold;
     }
+  }
 }
 
 //Cart Dropdown
 
 .cart-dropdown {
-    position: absolute;
-    top: $navigationHeight;
-    background: #F5F5F5;
-    right: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  position: absolute;
+  top: $navigationHeight;
+  background: #F5F5F5;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    &::before {
-        height: 5px;
-        background: $gold;
-        width: 100%;
-        content: '';
-        display: block;
-    }
+  &::before {
+    height: 5px;
+    background: $gold;
+    width: 100%;
+    content: '';
+    display: block;
+  }
 }
 
 .cart-list {
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: space-around;
 }
 
 .cart-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5px;
 }
 
 .product-photo {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
 
 .item-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5px;
 }
 
 .button-close {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .shopping-summary {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    .summary-line {
-        display: flex;
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-around;
-        text-align: left;
-    }
+  .summary-line {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
 }
 
 .price-caption {
-    display: block;
-    width: 50%;
+  display: block;
+  width: 50%;
 }
 
 .cart-submit {
-    height: 60px;
-    margin: 10px;
-    background: $greyDark;
-    color: white;
-    font-weight: 900;
+  height: 60px;
+  margin: 10px;
+  background: $greyDark;
+  color: white;
+  font-weight: 900;
 
-    &:hover {
-        background: $gold;
-    }
+  &:hover {
+    background: $gold;
+  }
 }
 
 .item-quantity, .price-total {
-    color: red;
+  color: red;
 }
 
 .price-caption, .price-subtotal, .price-total {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 //Media
 @media screen and (max-width: 1280px) {
-    .navigation-container {
-        padding: 0 40px;
-    }
+  .navigation-container {
+    padding: 0 40px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .navigation-container {
-        height: $navigationHeightSmall;
-        padding: 0 15px;
-    }
+  .navigation-container {
+    height: $navigationHeightSmall;
+    padding: 0 15px;
+  }
 
-    .navigation-menu {
-        visibility: hidden;
-        background-color: $navigationBackground;
-        width: 100%;
-        position: fixed;
-        top: $navigationHeightSmall;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        opacity: 0;
-    }
+  .navigation-menu {
+    visibility: hidden;
+    background-color: $navigationBackground;
+    width: 100%;
+    position: fixed;
+    top: $navigationHeightSmall;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0;
+  }
 
-    .navigation-hamburger {
-        display: table-cell;
-        vertical-align: middle;
-        outline: none;
+  .navigation-hamburger {
+    display: table-cell;
+    vertical-align: middle;
+    outline: none;
 
-        &.active {
-            .hamburger-segment {
-                background: transparent;
+    &.active {
+      .hamburger-segment {
+        background: transparent;
 
-                &:before {
-                    left: 0;
-                    top: 0;
-                    transform: rotate(-45deg);
-                    transition-property: transform;
-                    transition-duration: 0.5s;
-                }
-
-                &:after {
-                    left: 0;
-                    top: 0;
-                    transform: rotate(45deg);
-                    transition-property: transform;
-                    transition-duration: 0.5s;
-                }
-            }
+        &:before {
+          left: 0;
+          top: 0;
+          transform: rotate(-45deg);
+          transition-property: transform;
+          transition-duration: 0.5s;
         }
 
-        .hamburger-segment {
-            background: $hamburgerColor;
-            transition-property: background;
-            transition-duration: 0.5s;
-
-            &:before {
-                transform: rotate(0);
-                transition-property: transform;
-                transition-duration: 0.5s;
-            }
-
-            &:after {
-                transform: rotate(0);
-                transition-property: transform;
-                transition-duration: 0.5s;
-            }
+        &:after {
+          left: 0;
+          top: 0;
+          transform: rotate(45deg);
+          transition-property: transform;
+          transition-duration: 0.5s;
         }
+      }
     }
 
-    .navigation-item {
-        width: 100%;
-        text-align: center;
-        font-size: 100%;
-        vertical-align: middle;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+    .hamburger-segment {
+      background: $hamburgerColor;
+      transition-property: background;
+      transition-duration: 0.5s;
 
-    .menuToggled {
-        visibility: visible;
-        opacity: 1;
-    }
+      &:before {
+        transform: rotate(0);
+        transition-property: transform;
+        transition-duration: 0.5s;
+      }
 
-    .cart-dropdown {
-        display: none;
+      &:after {
+        transform: rotate(0);
+        transition-property: transform;
+        transition-duration: 0.5s;
+      }
     }
+  }
+
+  .navigation-item {
+    width: 100%;
+    text-align: center;
+    font-size: 100%;
+    vertical-align: middle;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menuToggled {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .cart-dropdown {
+    display: none;
+  }
 }
