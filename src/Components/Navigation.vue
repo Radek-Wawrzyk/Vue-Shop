@@ -5,23 +5,23 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpPB8zAHXMcSxKjEZNfym4sYcRVKFHoBJNwUGz-UBAjnV2w90fug" alt="logo">
       </router-link>
     </figure>
-    <ul v-bind:class="{'menuToggled': isMenuToggled}" class="navigation-menu">
+    <ul v-bind:aria-expanded="{isMenuToggled}" v-bind:class="{'menuToggled': isMenuToggled}" class="navigation-menu">
       <li v-on:click="toggleMenu" class="navigation-item">
-        <router-link to="/">Home </router-link>
+        <router-link aria-label="Home Page" to="/">Home </router-link>
       </li>
       <li v-on:click="toggleMenu" class="navigation-item">
-        <router-link to="/shop">Shop </router-link>
+        <router-link aria-label="Shop Page" to="/shop">Shop </router-link>
       </li>
       <li v-on:click="toggleMenu" class="navigation-item">
-        <router-link to="/about">About </router-link>
+        <router-link arial-label="About us" to="/about">About </router-link>
       </li>
       <li v-on:click="toggleMenu" class="navigation-item">
-        <router-link to="/contact">Contact </router-link>
+        <router-link aria-label="Contact Us" to="/contact">Contact </router-link>
       </li>
     </ul>
     <ul class="navigation-icons">
       <li class="navigation-icons-item">
-        <button v-bind:class="{'active' : isMenuToggled}" v-on:click="toggleMenu" class="navigation-hamburger">
+        <button aria-label="Open Mobile Menu" v-bind:class="{'active' : isMenuToggled}" v-on:click="toggleMenu" class="navigation-hamburger">
           <span class="hamburger-segment" />
         </button>
       </li>
@@ -44,7 +44,7 @@
                   <p class="item-price">22.50$</p>
                   <p class="item-quantity">x2</p>
                 </div>
-                <button class="button-close" type="button">
+                <button aria-label="Remove Item from Cart" class="button-close" type="button">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z" /></svg>
                 </button>
               </li>
@@ -55,7 +55,7 @@
                   <p class="item-price">22.50$</p>
                   <p class="item-quantity">x2</p>
                 </div>
-                <button class="button-close" type="button">
+                <button aria-label="Remove Item from Cart" class="button-close" type="button">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z" /></svg>
                 </button>
               </li>
@@ -66,7 +66,7 @@
                   <p class="item-price">22.50$</p>
                   <p class="item-quantity">x2</p>
                 </div>
-                <button class="button-close" type="button">
+                <button aria-label="Remove Item from Cart" class="button-close" type="button">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z" /></svg>
                 </button>
               </li>
@@ -93,16 +93,16 @@
           <div v-if="areSettingsToggled" class="settings-dropdown">
             <ul class="settings-list">
               <li class="settings-item">
-                <a href="#">Setting 1</a>
+                <a aria-label="Settings Section 1" href="#">Setting 1</a>
               </li>
               <li class="settings-item">
-                <a href="#">Setting 2</a>
+                <a aria-label="Settings Section 2" href="#">Setting 2</a>
               </li>
               <li class="settings-item">
-                <a href="#">Setting 3</a>
+                <a aria-label="Settings Section 3" href="#">Setting 3</a>
               </li>
               <li class="settings-item">
-                <a href="#">Setting 4</a>
+                <a aria-label="Settings Section 4" href="#">Setting 4</a>
               </li>
             </ul>
           </div>
