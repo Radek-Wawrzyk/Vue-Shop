@@ -275,6 +275,7 @@ nav {
     vertical-align: middle;
     outline: none;
 
+    padding: 0;
     &.active {
       .hamburger-segment {
         background: transparent;
@@ -325,6 +326,10 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .navigation-icons-item {
+    display: flex;
   }
 
   .menuToggled {
