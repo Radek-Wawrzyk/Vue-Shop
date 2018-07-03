@@ -95,7 +95,7 @@ textarea {
     background: $gold;
   }
   &:focus + label::before {
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.12);
+    border-color: $greyLight;
   }
   &:checked + label::before {
     background: $gold;
