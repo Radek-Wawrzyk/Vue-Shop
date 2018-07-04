@@ -6,7 +6,7 @@
       </button>
       <figure class="navigation-logo">
         <router-link to="/" title="Homepage" aria-label="Homepage" >
-          <img src="../assets/logotype.png" alt="logo">
+          <img src="../../assets/logotype.png" alt="logo">
         </router-link>
       </figure>
     </div>
