@@ -45,6 +45,6 @@ export default {
 
 <style lang="scss">
 
-@import "@/Styles/Pages/Shop.scss";
+@import "Shop.scss";
 
 </style>

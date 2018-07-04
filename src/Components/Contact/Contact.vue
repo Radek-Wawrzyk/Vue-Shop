@@ -218,7 +218,5 @@ export default {
 </script>
 
 <style lang="scss">
-
-@import "./../Styles/Pages/Contact";
-
+  @import "Contact.scss"
 </style>

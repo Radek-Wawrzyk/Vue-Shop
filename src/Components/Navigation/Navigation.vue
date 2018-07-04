@@ -113,7 +113,7 @@
 </template>
 
 <style lang="scss">
-  @import "@/Styles/Components/Navigation.scss";
+  @import "Navigation.scss";
 </style>
 
 <script>
