@@ -43,8 +43,4 @@ export default {
 
 </script>
 
-<style lang="scss">
-
-@import "Shop.scss";
-
-</style>
+<style lang="scss" src="./Shop.scss"/>
