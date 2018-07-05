@@ -217,6 +217,4 @@ export default {
 
 </script>
 
-<style lang="scss">
-  @import "Contact.scss"
-</style>
+<style lang="scss" src="./Contact.scss"/>

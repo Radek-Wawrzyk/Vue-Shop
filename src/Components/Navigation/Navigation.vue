@@ -116,10 +116,6 @@
   </nav>
 </template>
 
-<style lang="scss">
-  @import "Navigation.scss";
-</style>
-
 <script>
   export default {
     name: "Navigation",
@@ -154,3 +150,5 @@
     }
   }
 </script>
+
+<style lang="scss" src="./Navigation.scss"/>
