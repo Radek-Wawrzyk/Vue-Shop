@@ -112,6 +112,7 @@ $dropdownBackground: #F5F5F5;
 .navigation-icon {
   width: 30px;
   height: 30px;
+  position: relative;
   &.active {
     svg {
       fill: $navigationAccent;
@@ -130,7 +131,7 @@ $dropdownBackground: #F5F5F5;
 
 //Navigation Dropdowns
 
-.cart-dropdown, .settings-dropdown {
+.settings-dropdown {
   position: absolute;
   top: $navigationHeight;
   background: $dropdownBackground;
@@ -146,57 +147,11 @@ $dropdownBackground: #F5F5F5;
     display: block;
   }
 }
-.cart-list, .settings-list {
+.settings-list {
   display: flex;
   flex-direction: column;
   padding: 30px;
   justify-content: space-around;
-}
-.cart-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 5px;
-}
-.product-photo {
-  width: 80px;
-  height: 80px;
-}
-.item-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 5px;
-}
-.button-close {
-  width: 30px;
-  height: 30px;
-}
-.shopping-summary {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .summary-line {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: left;
-  }
-}
-.price-caption {
-  display: block;
-  width: 50%;
-}
-.btn-cart-submit {
-  height: 60px;
-  margin: 10px;
-}
-.item-quantity, .price-total {
-  color: $gold;
-}
-.price-caption, .price-subtotal, .price-total {
-  font-weight: bold;
 }
 .settings-item {
   padding: 5px;
@@ -314,7 +269,7 @@ $dropdownBackground: #F5F5F5;
     visibility: visible;
     opacity: 1;
   }
-  .cart-dropdown, .settings-dropdown {
+  .settings-dropdown {
     display: none;
   }
 }
