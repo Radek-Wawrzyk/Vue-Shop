@@ -18,6 +18,7 @@ $dropdownBackground: white;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.15);
   right: 30px;
   min-width: 310px;
+  max-width: 310px;
   &::before {
     height: 5px;
     background: $navigationAccent;
@@ -56,6 +57,8 @@ $dropdownBackground: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 55%;
+  margin: 0 0 0 10px;
 
   &-amount {
     color: $gold;
@@ -98,6 +101,12 @@ $dropdownBackground: white;
   }
   &-text {
     color: #333;
+  }
+  &-blank {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 60px 0;
+    color: $greyMedium;
   }
 }
 .btn-cart-submit {
