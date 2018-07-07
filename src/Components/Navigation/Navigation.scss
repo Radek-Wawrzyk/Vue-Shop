@@ -56,16 +56,18 @@ $dropdownBackground: #F5F5F5;
 .navigation-item {
   display: inline-block;
   position: relative;
-  padding: 0 20px;
   font-size: 18px;
   text-transform: uppercase;
   line-height: $navigationHeight;
-  color: $navigationForeground;
   > a {
     cursor: pointer;
+    transition: color 0.25s;
+    display: block;
+    height: 100%;
+    padding: 0 20px;
   }
-  &:hover {
-    color: $navigationHoverForeground;
+  &:hover, &:focus, a.router-link-exact-active {
+    color: $gold;
   }
 }
 
@@ -112,6 +114,7 @@ $dropdownBackground: #F5F5F5;
 .navigation-icon {
   width: 30px;
   height: 30px;
+  position: relative;
   &.active {
     svg {
       fill: $navigationAccent;
@@ -130,7 +133,7 @@ $dropdownBackground: #F5F5F5;
 
 //Navigation Dropdowns
 
-.cart-dropdown, .settings-dropdown {
+.settings-dropdown {
   position: absolute;
   top: $navigationHeight;
   background: $dropdownBackground;
@@ -146,57 +149,11 @@ $dropdownBackground: #F5F5F5;
     display: block;
   }
 }
-.cart-list, .settings-list {
+.settings-list {
   display: flex;
   flex-direction: column;
   padding: 30px;
   justify-content: space-around;
-}
-.cart-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 5px;
-}
-.product-photo {
-  width: 80px;
-  height: 80px;
-}
-.item-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 5px;
-}
-.button-close {
-  width: 30px;
-  height: 30px;
-}
-.shopping-summary {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .summary-line {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: left;
-  }
-}
-.price-caption {
-  display: block;
-  width: 50%;
-}
-.btn-cart-submit {
-  height: 60px;
-  margin: 10px;
-}
-.item-quantity, .price-total {
-  color: $gold;
-}
-.price-caption, .price-subtotal, .price-total {
-  font-weight: bold;
 }
 .settings-item {
   padding: 5px;
@@ -239,8 +196,23 @@ $dropdownBackground: #F5F5F5;
     left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
+    overflow: hidden;
+  }
+  .navigation-item {
+    width: 50%;
+    text-align: center;
+    font-size: 100%;
+    line-height: inherit;
+    a {
+      padding: 15px 0;
+      transition: transform 0.25s, color 0.25s;
+    }
+    & a:hover, & a:focus, & a.router-link-exact-active {
+      transform: translate3d(20px,0,0);
+    }
   }
   .navigation-logo {
     width: auto;
@@ -297,16 +269,6 @@ $dropdownBackground: #F5F5F5;
       }
     }
   }
-  .navigation-item {
-    width: 100%;
-    text-align: center;
-    font-size: 100%;
-    vertical-align: middle;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .navigation-icons-item {
     display: flex;
   }
@@ -314,7 +276,7 @@ $dropdownBackground: #F5F5F5;
     visibility: visible;
     opacity: 1;
   }
-  .cart-dropdown, .settings-dropdown {
+  .settings-dropdown {
     display: none;
   }
 }
