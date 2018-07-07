@@ -159,6 +159,8 @@ export default new Vuex.Store({
     },
   },
   actions: {
-
+    deleteCartItem(event, cartItemId) {
+      event.commit("deleteCartItem", cartItemId);
+    }
   }
 })

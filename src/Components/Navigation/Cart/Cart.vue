@@ -47,8 +47,8 @@
       }
     },
     methods: {
-      deleteCartItem(cartItem) {
-        this.$store.commit("deleteCartItem", cartItem.id);
+      deleteCartItem(item) {
+        this.$store.dispatch("deleteCartItem", item.id);
       },
       toggleCart: function () {
         this.isCartToggled =! this.isCartToggled;
