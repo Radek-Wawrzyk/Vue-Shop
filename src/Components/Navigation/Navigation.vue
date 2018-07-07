@@ -1,7 +1,7 @@
 <template>
   <nav class="navigation">
     <div class="navigation-left">
-      <button v-bind:aria-expanded="isMenuToggled" aria-label="Open Mobile Menu" v-bind:class="{'active' : isMenuToggled}" v-on:click="toggleMenu" class="navigation-hamburger">
+      <button :aria-expanded="isMenuToggled ? 'true' : 'false'" aria-label="Open Mobile Menu" v-bind:class="{'active' : isMenuToggled}" v-on:click="toggleMenu" class="navigation-hamburger">
         <span class="hamburger-segment" />
       </button>
       <figure class="navigation-logo">
@@ -63,6 +63,7 @@
 </template>
 
 <script>
+
   import Cart from "./Cart/Cart"
 
   export default {

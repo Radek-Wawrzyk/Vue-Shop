@@ -56,16 +56,18 @@ $dropdownBackground: #F5F5F5;
 .navigation-item {
   display: inline-block;
   position: relative;
-  padding: 0 20px;
   font-size: 18px;
   text-transform: uppercase;
   line-height: $navigationHeight;
-  color: $navigationForeground;
   > a {
     cursor: pointer;
+    transition: color 0.25s;
+    display: block;
+    height: 100%;
+    padding: 0 20px;
   }
-  &:hover {
-    color: $navigationHoverForeground;
+  &:hover, &:focus, a.router-link-exact-active {
+    color: $gold;
   }
 }
 
@@ -194,8 +196,23 @@ $dropdownBackground: #F5F5F5;
     left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
+    overflow: hidden;
+  }
+  .navigation-item {
+    width: 50%;
+    text-align: center;
+    font-size: 100%;
+    line-height: inherit;
+    a {
+      padding: 15px 0;
+      transition: transform 0.25s, color 0.25s;
+    }
+    & a:hover, & a:focus, & a.router-link-exact-active {
+      transform: translate3d(20px,0,0);
+    }
   }
   .navigation-logo {
     width: auto;
@@ -251,16 +268,6 @@ $dropdownBackground: #F5F5F5;
         transition-duration: 0.5s;
       }
     }
-  }
-  .navigation-item {
-    width: 100%;
-    text-align: center;
-    font-size: 100%;
-    vertical-align: middle;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .navigation-icons-item {
     display: flex;
