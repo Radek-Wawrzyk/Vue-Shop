@@ -1,0 +1,24 @@
+pipeline:
+  notify:
+    image: appleboy/drone-discord
+    secrets: [ discord_webhook_id, discord_webhook_token ]
+    message: "Frontend - Build started"
+  build:
+    image: plugins/docker
+    secrets: [ docker_username, docker_password ]
+    repo: matisiekpl/shop_frontend
+    tags: ${DRONE_COMMIT_SHA}
+  deploy:
+    image: appleboy/drone-ssh
+    host: 77.55.223.150
+    username: root
+    port: 22
+    secrets: [ ssh_password ]
+    script:
+      - docker stop shop_frontend || true
+      - docker rm shop_frontend || true
+      - docker run --name shop_frontend -p 3003:3003 -d matisiekpl/shop_frontend:${DRONE_COMMIT_SHA}
+  notify:
+    image: appleboy/drone-discord
+    secrets: [ discord_webhook_id, discord_webhook_token ]
+    message: "Frontend - Build finished"
