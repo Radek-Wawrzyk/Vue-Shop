@@ -61,7 +61,7 @@
     },
     computed: {
       cartItems() {
-        return this.$store.state.cart.cartItems;
+        return this.$store.getters.cartItems;
       },
       cartSum() {
         return this.$store.state.cart.sum;

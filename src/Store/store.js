@@ -142,6 +142,11 @@ export default new Vuex.Store({
       ]
     }
   },
+  getters: {
+    cartItems(state) {
+      return state.cart.cartItems;
+    },
+  },
   mutations: {
     deleteCartItem(state, cartItemId) {
       //Delete clicked cart item
