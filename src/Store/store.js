@@ -114,10 +114,49 @@ export default new Vuex.Store({
         },
         img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m50509-0016.png"
       }
-    ]
+    ],
+    cart: {
+      sum: 0,
+      cartItems: [
+        {
+          id: 1,
+          title: "Exploder II",
+          price: 60000,
+          img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116655-0001.png",
+          amount: 1
+        },
+        {
+          id: 2,
+          title: "Lady-datejust",
+          price: 1250,
+          img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116613lb-0005.png",
+          amount: 2
+        },
+        {
+          id: 3,
+          title: "Sky-Dweller",
+          price: 40000,
+          img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116680-0002.png",
+          amount: 1
+        },
+      ]
+    }
   },
   mutations: {
+    deleteCartItem(state, cartItemId) {
+      //Delete clicked cart item
+      state.cart.cartItems.forEach((item, index) => {
+        if (item.id === cartItemId ) {
+          state.cart.cartItems.splice(index, 1);
+        }
+      });
 
+      //Update amount of cart
+      state.cart.sum = 0;
+      state.cart.cartItems.forEach(item => {
+        state.cart.sum += item["price"] * item.amount;
+      });
+    },
   },
   actions: {
 

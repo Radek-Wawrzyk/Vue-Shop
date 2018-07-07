@@ -86,3 +86,5 @@ export default {
 }
 
 </script>
+
+<styles lang="scss" src="./ShopFilters.scss"/>
