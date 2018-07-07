@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
@@ -162,10 +162,32 @@ export default new Vuex.Store({
         state.cart.sum += item["price"] * item.amount;
       });
     },
+    addToCart(state, item) {
+      //Define cart object
+      const cartItem = {
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        img: item.img,
+        amount: item.amount
+      };
+
+      //Push object to cart
+      state.cart.cartItems.push(cartItem);
+
+      //Update amount of cart
+      state.cart.sum = 0;
+      state.cart.cartItems.forEach(item => {
+        state.cart.sum += item["price"] * item.amount;
+      });
+    }
   },
   actions: {
     deleteCartItem(event, cartItemId) {
       event.commit("deleteCartItem", cartItemId);
+    },
+    addToCart(event, item) {
+      event.commit("addToCart", item);
     }
   }
 })

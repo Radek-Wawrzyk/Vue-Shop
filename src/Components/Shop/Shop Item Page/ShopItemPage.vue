@@ -44,8 +44,8 @@
 
         <div class="item-actions">
           <input type="number" class="item-quantity"/>
-          <button type="button" class="item-add btn">Add to cart</button>
-          <button type="button" class="item-favourite btn-light">
+          <button type="button" class="item-add btn" @click="addToCart">Add to cart</button>
+          <button type="button" class="item-favourite">
             <svg aria-hidden="true" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-heart fa-w-16 fa-3x"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
           </button>
         </div>
@@ -88,7 +88,14 @@
     {
       return {
         sliderTranslation: 0,
-        translationStrength: 15
+        translationStrength: 15,
+        item: { //Test of future dynamic object
+          id: 4,
+          title: "Celinni",
+          price: 43100,
+          img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m50509-0016.png",
+          amount: 1,
+        }
       }
     },
     methods: {
@@ -101,6 +108,9 @@
       {
         this.sliderTranslation += this.translationStrength;
         console.log(this.sliderTranslation);
+      },
+      addToCart() {
+        this.$store.dispatch("addToCart", this.item);
       }
     }
   }
