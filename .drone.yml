@@ -14,6 +14,7 @@ pipeline:
     username: root
     port: 22
     secrets: [ ssh_password ]
+    command_timeout: 300
     script:
       - docker stop shop_frontend || true
       - docker rm shop_frontend || true
