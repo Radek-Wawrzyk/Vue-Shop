@@ -26,7 +26,7 @@
         <section class="cart-summary">
           <transition name="fade">
             <p class="cart-summary-blank" v-if="cartItems.length === 0">
-              There is no products in cart
+              Cart is empty
             </p>
           </transition>
           <p class="cart-summary-text">Total</p>

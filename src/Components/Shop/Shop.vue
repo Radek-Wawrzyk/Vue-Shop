@@ -23,9 +23,9 @@
 
 <script>
 
-import ShopFilters from "./ShopFilters";
-import ShopProduct from "./ShopProduct";
-import ShopHeader from "./ShopHeader";
+import ShopFilters from "./Shop Filters/ShopFilters";
+import ShopProduct from "./Shop Product/ShopProduct";
+import ShopHeader from "./Shop Header/ShopHeader";
 
 export default {
   name: "Shop",

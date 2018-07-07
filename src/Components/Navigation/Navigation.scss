@@ -125,6 +125,7 @@ $dropdownBackground: #F5F5F5;
     transition: fill 0.25s;
   }
   &:hover, &:focus {
+    outline: none;
     svg {
       fill: $navigationAccent;
     }

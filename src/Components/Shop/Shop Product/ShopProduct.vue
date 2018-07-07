@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-6 col-lg-4">
     <div class="product">
-      <router-link to="/product" :aria-label="product.title" :title="product.title">
+      <router-link to="product" :aria-label="product.title" :title="product.title">
         <figure class="product-img">
           <img v-bind:src="product.img" :alt="product.title">
         </figure>
@@ -24,6 +24,8 @@ export default {
 }
 
 </script>
+
+<styles lang="scss" src="./ShopProduct.scss"/>
 
 
 
