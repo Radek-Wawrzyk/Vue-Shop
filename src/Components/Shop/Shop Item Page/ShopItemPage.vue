@@ -1,9 +1,9 @@
 <template>
   <main class="item-page container">
     <div class="item-container row">
-      <div class="item-gallery">
+      <div class="item-gallery col-sm-6 col-xs-12">
         <div class="item-frame">
-          <img class="item-image" src="http://placehold.it/400x450"/>
+          <img class="item-image" src="http://placehold.it/300x350"/>
         </div>
         <div class="item-slider">
           <button type="button" v-on:click="moveBack" class="slider-back">
@@ -37,7 +37,7 @@
           </button>
         </div>
       </div>
-      <div class="item-brief">
+      <div class="item-brief col-sm-6 col-xs-12">
         <h5 class="item-name">Cloud Wall Clock</h5>
         <p class="item-price">$35.00</p>
         <p class="item-desc">Very good product my friend</p>
@@ -88,7 +88,7 @@
     {
       return {
         sliderTranslation: 0,
-        translationStrength: 15,
+        translationStrength: 40,
         item: { //Test of future dynamic object
           id: 4,
           title: "Celinni",
@@ -101,13 +101,11 @@
     methods: {
       moveBack: function () 
       {
-        this.sliderTranslation -= this.translationStrength;
-        console.log(this.sliderTranslation);
+          this.sliderTranslation += this.translationStrength;
       },
       moveNext: function()
       {
-        this.sliderTranslation += this.translationStrength;
-        console.log(this.sliderTranslation);
+          this.sliderTranslation -= this.translationStrength;
       },
       addToCart() {
         this.$store.dispatch("addToCart", this.item);
