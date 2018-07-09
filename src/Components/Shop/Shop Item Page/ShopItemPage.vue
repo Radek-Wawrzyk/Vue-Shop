@@ -39,7 +39,7 @@
       </div>
       <div class="item-brief col-sm-6 col-xs-12">
         <h5 class="item-name">Cloud Wall Clock</h5>
-        <p class="item-price">{{ product.price }}</p>
+        <p class="item-price">{{  }}</p>
         <p class="item-desc">Very good product my friend</p>
 
         <div class="item-actions">
@@ -87,7 +87,6 @@
     data()
     {
       return {
-        product: this.$store.getters.productsData(0),
         sliderTranslation: 0,
         translationStrength: 40,
         item: { //Test of future dynamic object
@@ -97,13 +96,6 @@
           img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m50509-0016.png",
           amount: 1,
         }
-      }
-    },
-    computed:
-    {
-      productsData(id)
-      {
-        return this.$store.getters.productsData[id];
       }
     },
     methods: {
