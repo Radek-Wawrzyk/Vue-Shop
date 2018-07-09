@@ -93,7 +93,7 @@
         item: { //Test of future dynamic object
           id: 4,
           title: "Celinni",
-          price: 43100,
+          price: 42100,
           img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m50509-0016.png",
           amount: 1,
         }
