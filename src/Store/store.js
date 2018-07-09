@@ -146,6 +146,9 @@ export default new Vuex.Store({
     cartItems(state) {
       return state.cart.cartItems;
     },
+    products(state) {
+      return state.products;
+    }
   },
   mutations: {
     deleteCartItem(state, cartItemId) {
