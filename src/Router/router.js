@@ -26,7 +26,7 @@ export default new Router({
       component: Contact
     },
     {
-      path: '/product',
+      path: '/product/:id',
       name: 'Product',
       component: ShopItemPage
     }
