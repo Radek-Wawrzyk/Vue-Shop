@@ -1,153 +1,140 @@
 @import "../../../Styles/Settings/Colors";
 @import "../../../Styles/Components/Buttons";
 
-.item-page
-{
-    margin-left: 10px;
-    margin-right: 10px;
+.page-product {
+  padding: 50px 0 0 0;
+}
+//Item buy
 
-    padding-top: 30px;
-
-    display: flex;
-    flex-direction: column;
+.item-buy {
+  display: flex;
+  margin-top: 30px;
+}
+.item-add {
+  width: 200px;
 }
 
-.item-container
-{
-    display: flex;
-    flex-direction: row;
-}
+//Item informations
 
-.item-actions
-{
-    display: flex;
-    margin-top: 30px;
-}
-
-.item-quantity
-{
-    width: 120px;
-}
-
-.item-add
-{
-    width: 200px;
-    margin-left: 5px;
-}
-
-.item-favourite
-{
-    width: 40px;
-    height: 40px;
-    margin-left: 5px;
-
-    background-color: transparent;
-
-    &:focus
-    {
-        background-color: transparent;
-    }
-
-    path
-    {
-        fill: transparent;
-        stroke: red;
-        stroke-width: 30px;
-    }
-
-    &:hover
-    {
-        background-color: transparent;
-        path
-        {
-            fill: red;
-        }
-    }
-}
-
-.item-availability
-{
-    margin-top: 30px;
-    display: block;
-}
-
-.item-available
-{
+.item-info {
+  &-name {
+    margin: 0 0 8px 0;
+    color: $greyDark;
+  }
+  &-price {
+    font-weight: 600;
+    font-size: 18px;
     color: $gold;
+    margin:  0 0 8px 0;
+  }
 }
 
-.item-categories
-{
-    margin-top: 30px;
+// Item amount
+
+.item-amount {
+  position: relative;
+  margin: 0 15px 0 0;
+  input {
+    width: 120px;
+    padding: 12px 45px;
+    text-align: center;
+  }
+}
+.item-amount-btn {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  z-index: 1;
+  svg {
+    width: 15px;
+    height: 15px;
+    fill: #ccc;
+  }
+  &:nth-child(1) {
+    left: 0;
+  }
+  &:last-child {
+    right: 0;
+  }
 }
 
-.item-media
-{
+// Socials icons
+
+.item-socials {
+  display: flex;
+  margin: 30px 0;
+  &-text {
+    margin: 0 10px 0 0;
+  }
+  &-list {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.media-button
-{
-    background-color: transparent;
-
-    width: 60px;
-    height: 60px;
-    >svg
-    {
-        width: 30px;
-        height: 30px;
+  }
+  .item-social-item {
+    margin: 0 6px;
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      &:hover, &:focus {
+        svg {
+          fill: $gold;
+        }
+      }
+      svg {
+        fill: #666666;
+        width: 15px;
+        height: 15px;
+        transition: fill 0.25s;
+      }
     }
+
+  }
 }
 
 // Item Gallery
-.item-gallery
-{
-    width: 50%;
+
+.item-gallery {
+
+}
+.item-frame {
+  margin: 0 0 25px 0;
+}
+.item-slider {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.item-image {
+  width: 100%;
+  height: auto;
+  background: #eef1f8;
+
+}
+.photo-indicator {
+  height: 60px;
+  margin: 10px;
+}
+.slider-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.slider-frame {
+  display: flex;
+  position: relative;
+  transition: left 0.5s;
+}
+.slider-back, .slider-next {
+  width: 50px;
+  height: 50px;
 }
 
-.item-frame
-{
-    padding: 10px;
-}
+//Media
 
-.item-slider
-{
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.item-image
-{
-    width:100%;
-    height: 450px;
-}
-
-.photo-indicator
-{
-    height: 60px;
-    margin: 10px;
-}
-
-.slider-container
-{
-    width:100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.slider-frame
-{
-    display: flex;
-    position: relative;
-    transition: left 0.5s;
-}
-
-.slider-back, .slider-next
-{
-    width: 50px;
-    height: 50px;
+@media screen and (max-width: 992px) {
+  .item-gallery {
+    margin: 0 0 50px 0;
+  }
 }
