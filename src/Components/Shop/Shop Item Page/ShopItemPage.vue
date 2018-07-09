@@ -5,7 +5,7 @@
         <div class="col-lg-6 col-md-12">
           <section class="item-gallery">
             <div class="item-frame">
-              <img class="item-image" src="https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116613lb-0005.png"/>
+              <img class="item-image" :src="product.img" :alt="product.title"/>
             </div>
             <div class="item-slider">
               <button type="button" v-on:click="moveBack" class="slider-back">
@@ -13,9 +13,9 @@
               </button>
               <div class="slider-container">
                 <div v-bind:style="{ left: sliderTranslation + 'px' }" class="slider-frame">
-                  <img src="https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116613lb-0005.png" class="photo-indicator"/>
-                  <img src="https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116613lb-0005.png" class="photo-indicator"/>
-                  <img src="https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116613lb-0005.png" class="photo-indicator"/>
+                  <img :src="product.img" :alt="product.title" class="photo-indicator"/>
+                  <img :src="product.img" :alt="product.title" class="photo-indicator"/>
+                  <img :src="product.img" :alt="product.title" class="photo-indicator"/>
                 </div>
               </div>
               <button type="button" v-on:click="moveNext" class="slider-next">
@@ -27,9 +27,10 @@
         <div class="col-lg-6 col-md-12">
           <section class="item-brief">
             <div class="item-info">
-              <h5 class="item-info-name">Cloud Wall Clock</h5>
-              <p class="item-info-price">$10000</p>
+              <h5 class="item-info-name">{{product.title}}</h5>
+              <p class="item-info-price">${{product.price}}</p>
               <p class="item-info-description">
+                {{product.description}}
                 The Rolex Submariner’s robust and functional design swiftly became iconic. With their subtly
                 redesigned Oyster case, distinctive dial with large luminescent hour markers, graduated rotatable Cerachrom bezel
                 and solid link Oyster bracelet, the latest generation Submariner and Submariner Date are firmly in line with the
@@ -84,14 +85,8 @@
       return {
         sliderTranslation: 0,
         translationStrength: 40,
-        item: { //Test of future dynamic object
-          id: 4,
-          title: "Celinni",
-          price: 42100,
-          img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m50509-0016.png",
-          amount: 1,
-        },
-        amount: 1
+        amount: 1,
+        product: {}
       }
     },
     methods: {
@@ -110,8 +105,25 @@
         this.amount--;
       },
       addToCart() {
-        this.$store.dispatch("addToCart", this.item);
+        const cartItem = {
+          id: this.product.id,
+          title: this.product.title,
+          price: this.product.price,
+          img: this.product.img,
+          amount: this.amount
+        };
+
+        //Push object to cart
+        this.$store.dispatch("addToCart", cartItem);
       }
-    }
+    },
+    created: function() {
+      //Make sure that id is int
+      const id = parseInt(this.$route.params.id);
+
+      //Match products by id
+      const product = this.$store.state.products.find(item => item.id === id);
+      this.product = product;
+    },
   }
 </script>
