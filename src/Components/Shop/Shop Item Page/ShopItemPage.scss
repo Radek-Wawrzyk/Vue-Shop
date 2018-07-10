@@ -42,10 +42,11 @@
 }
 .item-amount-btn {
   position: absolute;
-  top: 0;
-  height: 100%;
+  top: 1px;
+  height: 95%;
   width: 45px;
   z-index: 1;
+  padding: 0;
   svg {
     width: 15px;
     height: 15px;
