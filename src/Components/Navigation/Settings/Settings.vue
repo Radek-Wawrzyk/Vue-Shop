@@ -40,4 +40,4 @@
   }
 </script>
 
-<style scoped></style>
+<style lang="scss" src="./Settings.scss" scoped />
