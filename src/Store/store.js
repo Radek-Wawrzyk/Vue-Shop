@@ -140,15 +140,24 @@ export default new Vuex.Store({
           amount: 1
         },
       ]
+    },
+    activeClasses: {
+      settings: false,
+      cart: false
     }
   },
   getters: {
     cartItems(state) {
       return state.cart.cartItems;
     },
-    productsData(state)
-    {
+    productsData(state) {
       return state.products;
+    },
+    toggleCartStatus(state) {
+      return state.activeClasses.cart;
+    },
+    toggleSettingsStatus(state) {
+      return state.activeClasses.settings;
     }
   },
   mutations: {
@@ -193,6 +202,14 @@ export default new Vuex.Store({
       state.cart.cartItems.forEach(item => {
         state.cart.sum += item["price"] * item.amount;
       });
+    },
+    toggleCart(state, status) {
+      state.activeClasses.cart =! state.activeClasses.cart;
+      state.activeClasses.settings = false;
+    },
+    toggleSettings(state, status) {
+      state.activeClasses.settings =! state.activeClasses.settings;
+      state.activeClasses.cart = false;
     }
   },
   actions: {
@@ -204,6 +221,12 @@ export default new Vuex.Store({
     },
     deleteCart(event) {
       event.commit("deleteCart");
+    },
+    toggleCart(event, status) {
+      event.commit("toggleCart", status);
+    },
+    toggleSettings(event, status) {
+      event.commit("toggleSettings", status);
     }
   }
 })
