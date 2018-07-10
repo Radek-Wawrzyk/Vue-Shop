@@ -155,9 +155,26 @@ $dropdownBackground: white;
 }
 
 @media screen and (max-width: 480px) {
+  /*.cart-dropdown {
+    right: 0;
+    width: 100%;
+    max-width: 480px;
+    max-height: 500px;
+    overflow-y: auto;
+  }*/
   .cart-dropdown {
     right: 0;
     width: 100%;
     max-width: 480px;
+    height: calc(100vh - 60px);
+  }
+  .cart-list {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .cart-summary {
+    height: 25%;
+    padding: 15px 20px 0 20px;
+    border-top: 1px solid $greyLight;
   }
 }

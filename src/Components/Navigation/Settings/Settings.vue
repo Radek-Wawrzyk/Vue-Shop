@@ -29,7 +29,7 @@
     name: "Settings",
     methods: {
       toggleSettings() {
-        this.$store.dispatch("toggleSettings", status)
+        this.$store.dispatch("toggleSettings");
       }
     },
     computed: {

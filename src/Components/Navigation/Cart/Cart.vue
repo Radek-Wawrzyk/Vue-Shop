@@ -53,7 +53,7 @@
         this.$store.dispatch("deleteCartItem", item.id);
       },
       toggleCart() {
-        this.$store.dispatch("toggleCart", status)
+        this.$store.dispatch("toggleCart");
       }
     },
     mounted: function () {

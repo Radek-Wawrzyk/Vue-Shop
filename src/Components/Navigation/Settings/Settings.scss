@@ -53,6 +53,9 @@
   .settings-dropdown {
     width: 100%;
     max-width: 480px;
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+    display: block;
   }
   .settings-item {
 
