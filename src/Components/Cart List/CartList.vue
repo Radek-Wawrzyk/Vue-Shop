@@ -40,7 +40,7 @@
           </section>
           <section class="cart-summary">
             <p class="cart-summary-price">Summary: <span>${{cartSum}}</span></p>
-            <button class="btn btn-light" type="button" aria-label="Clear cart list">Clear shopping cart</button>
+            <button @click="deleteCart" class="btn btn-light" type="button" aria-label="Clear cart list">Clear shopping cart</button>
             <router-link class="cart-summary-link" to="/" aria-label="Continue shopping" title="Continue shopping">Continue Shopping</router-link>
           </section>
         </div>
@@ -55,6 +55,9 @@
     methods: {
       deleteCartItem(item) {
         this.$store.dispatch("deleteCartItem", item.id)
+      },
+      deleteCart() {
+        this.$store.dispatch("deleteCart");
       }
     },
     computed: {

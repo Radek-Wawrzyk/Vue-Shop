@@ -184,6 +184,15 @@ export default new Vuex.Store({
       state.cart.cartItems.forEach(item => {
         state.cart.sum += item["price"] * item.amount;
       });
+    },
+    deleteCart(state) {
+      state.cart.cartItems.splice(0, state.cart.cartItems.length);
+
+      //Update amount of cart
+      state.cart.sum = 0;
+      state.cart.cartItems.forEach(item => {
+        state.cart.sum += item["price"] * item.amount;
+      });
     }
   },
   actions: {
@@ -192,6 +201,9 @@ export default new Vuex.Store({
     },
     addToCart(event, item) {
       event.commit("addToCart", item);
+    },
+    deleteCart(event) {
+      event.commit("deleteCart");
     }
   }
 })

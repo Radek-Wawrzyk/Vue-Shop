@@ -73,4 +73,4 @@
 
 </script>
 
-<style lang="scss" src="./Cart.scss" />
+<style lang="scss" src="./Cart.scss" scoped />
