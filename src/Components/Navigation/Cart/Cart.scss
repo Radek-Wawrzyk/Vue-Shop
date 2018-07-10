@@ -112,10 +112,20 @@ $dropdownBackground: white;
     color: $greyMedium;
   }
 }
-.btn-cart-submit {
+.cart-submit {
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 20px 0;
   width: 100%;
+  background: $greyDark;
+  color: white;
+  transition: background 0.25s, color 0.15s;
+  &:hover, &:focus {
+    background: $gold;
+    color: $greyDark;
+  }
 }
 
 //Cart counter
