@@ -87,4 +87,4 @@ export default {
 
 </script>
 
-<styles lang="scss" src="./ShopFilters.scss"/>
+<styles lang="scss" src="./ShopFilters.scss" scopted />

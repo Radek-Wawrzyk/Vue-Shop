@@ -76,8 +76,6 @@
   </main>
 </template>
 
-<style lang="scss" src="./ShopItemPage.scss"></style>
-
 <script>
   export default {
     name: "ShopItemPage",
@@ -127,3 +125,5 @@
     },
   }
 </script>
+
+<style lang="scss" src="./ShopItemPage.scss" scoped></style>

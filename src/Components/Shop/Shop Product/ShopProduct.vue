@@ -25,7 +25,7 @@ export default {
 
 </script>
 
-<styles lang="scss" src="./ShopProduct.scss"/>
+<styles lang="scss" src="./ShopProduct.scss" scoped />
 
 
 

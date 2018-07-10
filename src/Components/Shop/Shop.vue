@@ -43,4 +43,4 @@ export default {
 
 </script>
 
-<style lang="scss" src="./Shop.scss"/>
+<style lang="scss" src="./Shop.scss" scoped/>

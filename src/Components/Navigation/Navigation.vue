@@ -92,4 +92,4 @@
   }
 </script>
 
-<style lang="scss" src="./Navigation.scss"/>
+<style lang="scss" src="./Navigation.scss" />
