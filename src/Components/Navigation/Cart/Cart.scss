@@ -145,3 +145,19 @@ $dropdownBackground: white;
   align-items: center;
   justify-content: center;
 }
+
+//Media
+
+@media screen and (max-width: 768px) {
+  .cart-dropdown {
+    top: 60px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cart-dropdown {
+    right: 0;
+    width: 100%;
+    max-width: 480px;
+  }
+}
