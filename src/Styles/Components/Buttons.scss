@@ -31,7 +31,9 @@ button {
   }
 }
 .btn-light {
-  background: $gold;
+  background: white;
+  border: 1px solid $greyLight;
+  color: $greyDark;
   &:hover, &:focus, &:active {
     background: $greyDark;
     color: $white;

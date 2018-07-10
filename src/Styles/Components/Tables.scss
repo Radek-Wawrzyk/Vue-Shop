@@ -1,0 +1,55 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  thead {
+    height: 60px;
+    background: $gold;
+    th {
+      color: white;
+    }
+  }
+  th {
+    color: $greyDark;
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+  }
+  td {
+    padding: 30px 0;
+    text-align: center;
+    vertical-align: middle;
+  }
+  tr {
+    border-bottom: 1px solid $greyLight;
+    vertical-align: middle;
+  }
+}
+
+//Table responsive
+
+.table-responsive {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+//Table cart
+
+.table-cart {
+  &-product {
+    display: flex;
+    align-items: center;
+  }
+  &-img {
+    width: 100px;
+    img {
+      width: 100%;
+      height: auto;
+      background: #eef1f8;
+    }
+  }
+  &-text {
+    padding: 0 25px;
+  }
+}
+
