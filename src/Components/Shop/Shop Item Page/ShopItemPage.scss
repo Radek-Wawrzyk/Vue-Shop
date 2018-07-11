@@ -144,9 +144,18 @@
   justify-content: center;
 }
 
+.tabs-header
+{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .tab-header
 {
-  padding: 50px;
+  //padding: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   position: relative;
   &::after {
     height: 2px;
@@ -162,7 +171,7 @@
   {
     &::after
     {
-      width: calc(100% - 100px);
+      width: calc(100% - 10px);
       background: brown;
     }
   }
@@ -171,7 +180,7 @@
   {
     &::after
     {
-      width: calc(100% - 100px);
+      width: calc(100% - 10px);
       background: brown;
     }
   }
