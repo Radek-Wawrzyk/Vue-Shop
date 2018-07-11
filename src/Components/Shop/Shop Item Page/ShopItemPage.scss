@@ -186,6 +186,23 @@
   }
 }
 
+.product-properties
+{
+  width: 100%;
+  text-align: center;
+
+  ::first-letter
+  {
+    text-transform: capitalize;
+  }
+}
+
+.property-cell
+{
+  padding: 20px;
+  border: 1px solid $greyLight;
+}
+
 .tab-body
 {
   width: 100%;
