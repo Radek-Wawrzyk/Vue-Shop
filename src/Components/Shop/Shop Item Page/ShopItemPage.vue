@@ -72,6 +72,37 @@
           </section>
         </div>
       </div>
+      <div class="row">
+        <div class="product-tabs col-lg-12">
+          <div class="tabs-header">
+            <button type="button" class="tab-header" v-for="(tab,index) in tabs" 
+            :key="index" 
+            v-on:click="activeTabIndex = index"
+            v-bind:class="{ 'active' : activeTabIndex == index}">{{ tab }}</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="tabs">
+            <transition name="fade">
+              <div v-show="activeTabIndex == 0" class="tab-body">
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </transition>
+            <transition name="fade">
+              <div v-show="activeTabIndex == 1" class="tab-body">
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </transition>
+            <transition name="fade">
+              <div v-show="activeTabIndex == 2" class="tab-body">
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </transition>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -81,6 +112,8 @@
     name: "ShopItemPage",
     data() {
       return {
+        tabs: ["Description","Additional Information","Reviews"],
+        activeTabIndex: 0,
         sliderTranslation: 0,
         translationStrength: 40,
         amount: 1,
@@ -113,6 +146,14 @@
 
         //Push object to cart
         this.$store.dispatch("addToCart", cartItem);
+      },
+      switchTab(index)
+      {
+        this.activeTabIndex = index;
+      },
+      activeTab(index)
+      {
+        return this.activeTabIndex == index;  
       }
     },
     created: function() {

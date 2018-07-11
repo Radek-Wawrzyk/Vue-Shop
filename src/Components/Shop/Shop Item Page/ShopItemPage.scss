@@ -93,10 +93,6 @@
 }
 
 // Item Gallery
-
-.item-gallery {
-
-}
 .item-frame {
   margin: 0 0 25px 0;
 }
@@ -137,4 +133,50 @@
   .item-gallery {
     margin: 0 0 50px 0;
   }
+}
+
+//Item Tabs
+
+.product-tabs
+{
+  display: flex;
+  justify-content: center;
+}
+
+.tab-header
+{
+  padding: 50px;
+  position: relative;
+  &::after {
+    height: 2px;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    bottom: 30%;
+    transition: width 1s;
+  }
+
+  &:hover
+  {
+    &::after
+    {
+      width: calc(100% - 100px);
+      background: brown;
+    }
+  }
+
+  &.active
+  {
+    &::after
+    {
+      width: calc(100% - 100px);
+      background: brown;
+    }
+  }
+}
+
+.tab-body
+{
+  width: 100%;
 }
