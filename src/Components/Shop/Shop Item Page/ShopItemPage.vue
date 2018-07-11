@@ -93,7 +93,7 @@
             <transition name="fade">
               <div v-show="activeTabIndex == 1" class="tab-body">
                 <table class="product-properties">
-                  <tr v-for="(property,index) in product.categories" :key="index">
+                  <tr v-for="(property,index) in product.properties" :key="index">
                     <td class="property-cell">{{ index }}</td>
                     <td class="property-cell">{{property}}</td>
                   </tr>

@@ -10,7 +10,7 @@ export default new Vuex.Store({
         id: 1,
         title: "Day-Date 40",
         price: 3526,
-        categories: {
+        properties: {
           strap: "metal",
           shape: "circle",
           style: "elegant",
@@ -22,7 +22,7 @@ export default new Vuex.Store({
         id: 2,
         title: "Sky-Dweller",
         price: 2531,
-        categories: {
+        properties: {
           strap: "metal",
           shape: "circle",
           style: "elegant",
@@ -34,7 +34,7 @@ export default new Vuex.Store({
         id: 3,
         title: "Datejust 41",
         price: 56525,
-        categories: {
+        properties: {
           strap: "leather",
           shape: "circle",
           style: "elegant",
@@ -46,7 +46,7 @@ export default new Vuex.Store({
         id: 4,
         title: "Lady-Datejust 28",
         price: 1224,
-        categories: {
+        properties: {
           strap: "metal",
           shape: "circle",
           style: "elegant",
@@ -58,7 +58,7 @@ export default new Vuex.Store({
         id: 5,
         title: "Submariner Date",
         price: 2678,
-        categories: {
+        properties: {
           strap: "metal",
           shape: "circle",
           style: "elegant",
@@ -70,7 +70,7 @@ export default new Vuex.Store({
         id: 6,
         title: "Air-King",
         price: 35000,
-        categories: {
+        properties: {
           strap: "metal",
           shape: "circle",
           style: "elegant",
@@ -82,7 +82,7 @@ export default new Vuex.Store({
         id: 7,
         title: "Explorer II",
         price: 35000,
-        categories: {
+        properties: {
           strap: "rubber",
           shape: "circle",
           style: "sport",
@@ -94,7 +94,7 @@ export default new Vuex.Store({
         id: 8,
         title: "GMT-Master",
         price: 23456,
-        categories: {
+        properties: {
           strap: "rubber",
           shape: "circle",
           style: "sport",
@@ -106,7 +106,7 @@ export default new Vuex.Store({
         id: 9,
         title: "Celinni",
         price: 43100,
-        categories: {
+        properties: {
           strap: "leather",
           shape: "circle",
           style: "elegant",
