@@ -144,7 +144,8 @@ export default new Vuex.Store({
     activeClasses: {
       settings: false,
       cart: false
-    }
+    },
+    body: document.querySelector("body")
   },
   getters: {
     cartItems(state) {
@@ -203,13 +204,26 @@ export default new Vuex.Store({
         state.cart.sum += item["price"] * item.amount;
       });
     },
-    toggleCart(state, status) {
+    toggleCart(state) {
       state.activeClasses.cart =! state.activeClasses.cart;
       state.activeClasses.settings = false;
+
+      if (state.activeClasses.cart) {
+        state.body.className= "overflow-hidden";
+      } else {
+        state.body.className = "";
+      }
+
     },
-    toggleSettings(state, status) {
+    toggleSettings(state) {
       state.activeClasses.settings =! state.activeClasses.settings;
       state.activeClasses.cart = false;
+
+      if (state.activeClasses.settings) {
+        state.body.className= "overflow-hidden";
+      } else {
+        state.body.className = "";
+      }
     }
   },
   actions: {
@@ -222,11 +236,11 @@ export default new Vuex.Store({
     deleteCart(event) {
       event.commit("deleteCart");
     },
-    toggleCart(event, status) {
-      event.commit("toggleCart", status);
+    toggleCart(event) {
+      event.commit("toggleCart");
     },
-    toggleSettings(event, status) {
-      event.commit("toggleSettings", status);
+    toggleSettings(event) {
+      event.commit("toggleSettings");
     }
   }
 })
