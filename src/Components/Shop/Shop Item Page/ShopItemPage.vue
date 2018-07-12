@@ -75,12 +75,16 @@
       <div class="row">
         <div class="product-tabs col-lg-12">
           <div class="tabs-header">
-            <button type="button" class="tab-header" v-for="(tab,index) in tabs" 
-            :key="index" 
-            v-on:click="activeTabIndex = index"
-            v-bind:class="{ 'active' : activeTabIndex == index}">{{ tab }}</button>
+            <ul class="tabs-list">
+              <li v-for="(tab,index) in tabs" :key="index">
+                <button type="button" class="tab-header" 
+                v-on:click="activeTabIndex = index"
+                v-bind:class="{ 'active' : activeTabIndex == index}">{{ tab }}</button>
+              </li>
+            </ul>
           </div>
         </div>
+        <hr/>
       </div>
       <div class="row">
         <div class="col-lg-12">
