@@ -113,63 +113,75 @@
 </template>
 
 <script>
-  export default {
-    name: "ShopItemPage",
-    data() {
-      return {
-        tabs: ["Description","Additional Information","Reviews"],
-        activeTabIndex: 0,
-        sliderTranslation: 0,
-        translationStrength: 40,
-        amount: 1,
-        product: {}
-      }
+export default {
+  name: "ShopItemPage",
+  data() {
+    return {
+      sliderFrameWidth: 0,
+      tabs: ["Description", "Additional Information", "Reviews"],
+      activeTabIndex: 0,
+      sliderTranslation: 0,
+      translationStrength: 40,
+      amount: 1,
+      product: {}
+    };
+  },
+  methods: {
+    moveBack: function() {
+      if(this.sliderTranslation + this.translationStrength <= 0)
+        this.sliderTranslation += this.translationStrength;
     },
-    methods: {
-      moveBack: function () 
-      {
-          this.sliderTranslation += this.translationStrength;
-      },
-      moveNext: function()
-      {
-          this.sliderTranslation -= this.translationStrength;
-      },
-      add() {
-        this.amount++;
-      },
-      sub() {
-        this.amount--;
-      },
-      addToCart() {
-        const cartItem = {
-          id: this.product.id,
-          title: this.product.title,
-          price: this.product.price,
-          img: this.product.img,
-          amount: this.amount
-        };
+    moveNext: function() {
+      if(this.sliderTranslation - this.translationStrength >= -this.totalSliderContentWidth + this.sliderFrameWidth)
+        this.sliderTranslation -= this.translationStrength;
+    },
+    add() {
+      this.amount++;
+    },
+    sub() {
+      this.amount--;
+    },
+    addToCart() {
+      const cartItem = {
+        id: this.product.id,
+        title: this.product.title,
+        price: this.product.price,
+        img: this.product.img,
+        amount: this.amount
+      };
 
-        //Push object to cart
-        this.$store.dispatch("addToCart", cartItem);
-      },
-      switchTab(index)
-      {
-        this.activeTabIndex = index;
-      },
-      activeTab(index)
-      {
-        return this.activeTabIndex == index;  
-      }
+      //Push object to cart
+      this.$store.dispatch("addToCart", cartItem);
     },
-    created: function() {
-      //Make sure that id is int
-      const id = parseInt(this.$route.params.id);
+    switchTab(index) {
+      this.activeTabIndex = index;
+    },
+    activeTab(index) {
+      return this.activeTabIndex == index;
+    }
+  },
+  created: function() {
+    //Make sure that id is int
+    const id = parseInt(this.$route.params.id);
 
-      //Match products by id
-      const product = this.$store.state.products.find(item => item.id === id);
-      this.product = product;
-    },
+    //Match products by id
+    const product = this.$store.state.products.find(item => item.id === id);
+    this.product = product;
+  },
+  computed:{
+     totalSliderContentWidth: function()
+     {
+        var result = 0;
+        this.sliderFrameWidth = document.querySelector('.slider-frame').offsetWidth;
+        var array = document.querySelectorAll(".photo-indicator");
+        for (var i = 0; i < array.length; i++) {
+          result += array[i].offsetWidth + 20;
+        }
+
+        return result;
+     }
   }
+};
 </script>
 
 <style lang="scss" src="./ShopItemPage.scss" scoped></style>
