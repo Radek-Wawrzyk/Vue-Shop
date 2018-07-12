@@ -117,7 +117,6 @@ export default {
   name: "ShopItemPage",
   data() {
     return {
-      sliderFrameWidth: 0,
       tabs: ["Description", "Additional Information", "Reviews"],
       activeTabIndex: 0,
       sliderTranslation: 0,
@@ -172,13 +171,16 @@ export default {
      totalSliderContentWidth: function()
      {
         var result = 0;
-        this.sliderFrameWidth = document.querySelector('.slider-frame').offsetWidth;
         var array = document.querySelectorAll(".photo-indicator");
         for (var i = 0; i < array.length; i++) {
           result += array[i].offsetWidth + 20;
         }
 
         return result;
+     },
+     sliderFrameWidth: function()
+     {
+       return document.querySelector('.slider-frame').offsetWidth;
      }
   }
 };
