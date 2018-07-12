@@ -30,11 +30,7 @@
               <h5 class="item-info-name">{{product.title}}</h5>
               <p class="item-info-price">${{product.price}}</p>
               <p class="item-info-description">
-                {{product.description}}
-                The Rolex Submariner’s robust and functional design swiftly became iconic. With their subtly
-                redesigned Oyster case, distinctive dial with large luminescent hour markers, graduated rotatable Cerachrom bezel
-                and solid link Oyster bracelet, the latest generation Submariner and Submariner Date are firmly in line with the
-                original model launched in 1953.
+                {{product.briefDescription}}
               </p>
             </div>
             <div class="item-buy">
@@ -91,7 +87,7 @@
           <div class="tabs">
             <transition name="fade">
               <div v-show="activeTabIndex == 0" class="tab-body">
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div>{{ product.description }}</div>
               </div>
             </transition>
             <transition name="fade">
