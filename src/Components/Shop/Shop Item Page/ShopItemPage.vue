@@ -5,7 +5,7 @@
         <div class="col-lg-6 col-md-12">
           <section class="item-gallery">
             <div class="item-frame">
-              <img class="item-image" :src="product.img" :alt="product.title"/>
+              <img class="item-image" :src="product.images[currentImage]" :alt="product.title"/>
             </div>
             <div class="item-slider">
               <button type="button" v-on:click="moveBack" class="slider-back">
@@ -13,9 +13,7 @@
               </button>
               <div class="slider-container">
                 <div v-bind:style="{ left: sliderTranslation + 'px' }" class="slider-frame">
-                  <img :src="product.img" :alt="product.title" class="photo-indicator"/>
-                  <img :src="product.img" :alt="product.title" class="photo-indicator"/>
-                  <img :src="product.img" :alt="product.title" class="photo-indicator"/>
+                  <img v-for="(image,index) in product.images" :key="index" :src="product.images[index]" :alt="product-title" class="photo-indicator" />
                 </div>
               </div>
               <button type="button" v-on:click="moveNext" class="slider-next">
@@ -118,6 +116,7 @@ export default {
   data() {
     return {
       tabs: ["Description", "Additional Information", "Reviews"],
+      currentImage: 0,
       activeTabIndex: 0,
       sliderTranslation: 0,
       translationStrength: 40,
@@ -126,11 +125,18 @@ export default {
     };
   },
   methods: {
-    moveBack: function() {
+    moveBack: function() 
+    {
+      if(this.currentImage - 1 >= 0)
+        this.currentImage -=1;
+
       if(this.sliderTranslation + this.translationStrength <= 0)
         this.sliderTranslation += this.translationStrength;
     },
     moveNext: function() {
+      if(this.currentImage + 1 <= this.product.images.length-1)
+        this.currentImage +=1;
+
       if(this.sliderTranslation - this.translationStrength >= -this.totalSliderContentWidth + this.sliderFrameWidth)
         this.sliderTranslation -= this.translationStrength;
     },
@@ -145,7 +151,7 @@ export default {
         id: this.product.id,
         title: this.product.title,
         price: this.product.price,
-        img: this.product.img,
+        images: this.product.images,
         amount: this.amount
       };
 

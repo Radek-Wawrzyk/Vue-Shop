@@ -3,7 +3,7 @@
     <div class="product">
       <router-link :to="'product/' + product.id" :aria-label="product.title" :title="product.title">
         <figure class="product-img">
-          <img v-bind:src="product.img" :alt="product.title">
+          <img v-bind:src="product.images[0]" :alt="product.title">
         </figure>
         <div class="product-content">
           <h5 class="product-title">{{product.title}}</h5>

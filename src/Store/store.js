@@ -17,7 +17,11 @@ export default new Vuex.Store({
           style: "elegant",
           type: "analogue",
         },
-        img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116400gv-0002.png"
+        images:
+        [ 
+          "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116400gv-0002.png"
+        
+        ]
       },
       {
         id: 2,
@@ -31,7 +35,7 @@ export default new Vuex.Store({
           style: "elegant",
           type: "analogue",
         },
-        img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m228238-0042.png"
+        images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m228238-0042.png"]
       },
       {
         id: 3,
@@ -45,7 +49,7 @@ export default new Vuex.Store({
           style: "elegant",
           type: "analogue",
         },
-        img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m50535-0002.png"
+        images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m50535-0002.png"]
       },
       {
         id: 4,
@@ -59,7 +63,7 @@ export default new Vuex.Store({
           style: "elegant",
           type: "analogue",
         },
-        img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116613lb-0005.png"
+        images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116613lb-0005.png"]
       },
       {
         id: 5,
@@ -73,7 +77,7 @@ export default new Vuex.Store({
           style: "elegant",
           type: "analogue",
         },
-        img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116900-0001.png"
+        images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116900-0001.png"]
       },
       {
         id: 6,
@@ -87,7 +91,7 @@ export default new Vuex.Store({
           style: "elegant",
           type: "analogue",
         },
-        img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116680-0002.png"
+        images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116680-0002.png"]
       },
       {
         id: 7,
@@ -101,7 +105,7 @@ export default new Vuex.Store({
           style: "sport",
           type: "analogue",
         },
-        img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116519ln-0024.png"
+        images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116519ln-0024.png"]
       },
       {
         id: 8,
@@ -115,7 +119,7 @@ export default new Vuex.Store({
           style: "sport",
           type: "analogue",
         },
-        img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116655-0001.png"
+        images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116655-0001.png"]
       },
       {
         id: 9,
@@ -129,7 +133,7 @@ export default new Vuex.Store({
           style: "elegant",
           type: "analogue",
         },
-        img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m50509-0016.png"
+        images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m50509-0016.png"]
       }
     ],
     cart: {
@@ -138,21 +142,21 @@ export default new Vuex.Store({
           id: 1,
           title: "Exploder II",
           price: 60000,
-          img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116655-0001.png",
+          images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116655-0001.png"],
           amount: 1
         },
         {
           id: 2,
           title: "Lady-datejust",
           price: 1250,
-          img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116613lb-0005.png",
+          images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116613lb-0005.png"],
           amount: 2
         },
         {
           id: 3,
           title: "Sky-Dweller",
           price: 40000,
-          img: "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116680-0002.png",
+          images: [ "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116680-0002.png"],
           amount: 1
         },
       ]
@@ -198,7 +202,7 @@ export default new Vuex.Store({
         id: item.id,
         title: item.title,
         price: item.price,
-        img: item.img,
+        images: item.images,
         amount: item.amount
       };
 
