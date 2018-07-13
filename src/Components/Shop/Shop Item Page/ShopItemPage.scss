@@ -104,9 +104,16 @@
   align-items: center;
 }
 .item-image {
+  position: relative;
+  top: 0;
   width: 100%;
   height: auto;
   background: #eef1f8;
+
+  &.fade-leave-active
+  {
+    display: none;
+  }
 
 }
 .photo-indicator {

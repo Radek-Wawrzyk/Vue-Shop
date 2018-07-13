@@ -5,7 +5,9 @@
         <div class="col-lg-6 col-md-12">
           <section class="item-gallery">
             <div class="item-frame">
-              <img class="item-image" :src="product.images[currentImage]" :alt="product.title"/>
+              <transition name="fade">
+                <img class="item-image" :src="product.images[currentImage]" :key="product.images[currentImage]" :alt="product.title"/>
+              </transition>
             </div>
             <div class="item-slider">
               <button type="button" v-on:click="moveBack" class="slider-back">
