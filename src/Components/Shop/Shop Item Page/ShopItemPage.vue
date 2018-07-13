@@ -15,7 +15,7 @@
               </button>
               <div class="slider-container">
                 <div v-bind:style="{ left: sliderTranslation + 'px' }" class="slider-frame">
-                  <img v-for="(image,index) in product.images" :key="index" :src="product.images[index]" :alt="product-title" class="photo-indicator" />
+                  <img v-for="(image,index) in product.images" :key="index" :src="product.images[index]" :alt="product.title" class="photo-indicator" />
                 </div>
               </div>
               <button type="button" v-on:click="moveNext" class="slider-next">
@@ -80,17 +80,16 @@
             </ul>
           </div>
         </div>
-        <hr/>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <div class="tabs">
-            <transition name="fade">
+            <transition name="fade-tabs">
               <div v-show="activeTabIndex == 0" class="tab-body">
                 <div>{{ product.description }}</div>
               </div>
             </transition>
-            <transition name="fade">
+            <transition name="fade-tabs">
               <div v-show="activeTabIndex == 1" class="tab-body">
                 <table class="product-properties">
                   <tr v-for="(property,index) in product.properties" :key="index">
@@ -100,9 +99,9 @@
                 </table>
               </div>
             </transition>
-            <transition name="fade">
+            <transition name="fade-tabs">
               <div v-show="activeTabIndex == 2" class="tab-body">
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <p class="text-center">Coming soon...</p>
               </div>
             </transition>
           </div>

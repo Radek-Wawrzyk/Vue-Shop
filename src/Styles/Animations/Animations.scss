@@ -39,3 +39,17 @@
     transform: scale(0.9)
   }
 }
+
+//Fade Tabs
+
+.fade-tabs {
+  &-enter-active, &-leave-active {
+    transition: opacity 0.4s;
+  }
+  &-enter {
+    opacity: 0;
+  }
+  &-leave-to {
+    display: none;
+  }
+}

@@ -7,6 +7,12 @@ main {
   box-sizing: border-box;
 }
 
+//Helper class
+
+.text-center {
+  text-align: center;
+}
+
 //Media
 
 @media screen and (max-width: 768px) {
