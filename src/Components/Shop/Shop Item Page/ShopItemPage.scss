@@ -94,6 +94,7 @@
 }
 
 // Item Gallery
+
 .item-frame {
   margin: 0 0 25px 0;
 }
@@ -135,6 +136,9 @@
 .slider-back, .slider-next {
   width: 50px;
   height: 50px;
+  svg {
+    fill: $greyMedium;
+  }
 }
 
 //Item Tabs
@@ -150,8 +154,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
   &::after {
     position: absolute;
     content: '';

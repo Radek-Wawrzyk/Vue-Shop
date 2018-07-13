@@ -11,7 +11,7 @@
         <transition-group class="cart-list" tag="ul" name="fade-cart" appear >
           <li class="cart-item" v-for="item in cartItems" :key="item.id" >
             <figure class="cart-photo">
-              <img v-bind:src="item.img" :alt="item.title" />
+              <img :src="item.img" :alt="item.title" />
             </figure>
             <div class="item-content">
               <p class="item-content-title">{{item.title}}</p>
