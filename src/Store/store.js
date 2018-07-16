@@ -281,7 +281,7 @@ export default new Vuex.Store({
         id: item.id,
         title: item.title,
         price: item.price,
-        img: item.images[0],
+        images: item.images,
         amount: item.amount
       };
 
