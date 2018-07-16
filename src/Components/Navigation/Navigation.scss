@@ -236,3 +236,22 @@ $dropdownBackground: #F5F5F5;
     opacity: 1;
   }
 }
+
+// SearchBar
+.navigation-searchbar
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: white;
+
+  padding: 20px;
+
+  display: flex;
+}
+
+.searchbar-textfield
+{
+  height: 100%;
+}

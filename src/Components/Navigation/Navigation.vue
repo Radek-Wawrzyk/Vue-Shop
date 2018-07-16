@@ -28,10 +28,15 @@
     </div>
     <div class="navigation-right">
       <ul class="navigation-icons">
-        <Search></Search>
+        <Search @click="toggleSearchBar"></Search>
         <Cart></Cart>
         <Settings></Settings>
       </ul>
+    </div>
+    <div v-if="isSearchBarToggled" class="navigation-searchbar">
+      <input class="searchbar-textfield" type="text"/>
+      <button type="button">Close</button>
+      <button type="button">Search</button>
     </div>
   </nav>
 </template>
@@ -47,6 +52,7 @@ export default {
   data() {
     return {
       isMenuToggled: false,
+      isSearchBarToggled:false,
       body: document.querySelector("body")
     };
   },
@@ -58,6 +64,11 @@ export default {
       } else {
         this.body.className = "";
       }
+    },
+    toggleSearchBar: function()
+    {
+      this.isSearchBarToggled = !this.isSearchBarToggled;
+      console.log(this.isSearchBarToggled);
     }
   }
 };
