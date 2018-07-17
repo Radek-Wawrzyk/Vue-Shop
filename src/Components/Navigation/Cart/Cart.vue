@@ -57,7 +57,7 @@
       }
     },
     mounted: function () {
-      return this.$store.state.cart.cartItems.forEach(item => {
+      return this.$store.state.cart.cart.cartItems.forEach(item => {
         this.$store.state.cart.sum += item["price"] * item.amount;
       });
     },

@@ -171,7 +171,7 @@ export default {
     const id = parseInt(this.$route.params.id);
 
     //Match products by id
-    const product = this.$store.state.products.find(item => item.id === id);
+    const product = this.$store.state.products.products.find(item => item.id === id);
     this.product = product;
   },
   computed:{

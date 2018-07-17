@@ -215,11 +215,5 @@ export default {
 		productsData(state) {
 			return state.products;
 		}
-	},
-	mutations: {
-
-	},
-	actions: {
-
 	}
 }
