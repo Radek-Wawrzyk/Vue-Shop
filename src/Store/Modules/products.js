@@ -217,8 +217,7 @@ const getters = {
 	}
 }
 
-export default
-{
+export default {
 	state,
 	getters
 }

@@ -1,5 +1,4 @@
-const state =
-{
+const state = {
 	activeClasses: {
 		settings: false,
 		cart: false
@@ -7,8 +6,7 @@ const state =
 	body: document.querySelector("body")
 }
 
-const getters =
-{
+const getters = {
 	toggleCartStatus(state) {
 		return state.activeClasses.cart;
 	},
@@ -17,8 +15,7 @@ const getters =
 	}
 }
 
-const mutations =
-{
+const mutations = {
 	toggleCart(state) {
 		state.activeClasses.cart = !state.activeClasses.cart;
 		state.activeClasses.settings = false;
@@ -42,8 +39,7 @@ const mutations =
 	}
 }
 
-const actions =
-{
+const actions = {
 	toggleCart(event) {
 		event.commit("toggleCart");
 	},
@@ -52,8 +48,7 @@ const actions =
 	}
 }
 
-export default
-{
+export default {
 	state,
 	getters,
 	mutations,

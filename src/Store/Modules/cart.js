@@ -1,5 +1,4 @@
-const state =
-{
+const state = {
   cart: {
     sum: 0,
     cartItems: [{
@@ -27,15 +26,13 @@ const state =
   }
 }
 
-const getters =
-{
+const getters = {
   cartItems(state) {
     return state.cart.cartItems;
   }
 }
 
-const mutations =
-{
+const mutations = {
   deleteCartItem(state, cartItemId) {
     //Delete clicked cart item
     state.cart.cartItems.forEach((item, index) => {
@@ -80,8 +77,7 @@ const mutations =
   }
 }
 
-const actions =
-{
+const actions = {
   deleteCartItem(event, cartItemId) {
     event.commit("deleteCartItem", cartItemId);
   },
@@ -93,8 +89,7 @@ const actions =
   }
 }
 
-export default
-{
+export default {
   state,
   getters,
   mutations,
