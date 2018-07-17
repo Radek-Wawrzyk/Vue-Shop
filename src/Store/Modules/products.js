@@ -1,4 +1,4 @@
-const Products = {
+export default {
 	state: {
 		products: [{
 				id: 1,
@@ -222,8 +222,4 @@ const Products = {
 	actions: {
 
 	}
-}
-
-export default {
-	Products
 }

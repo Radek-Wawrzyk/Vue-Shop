@@ -1,4 +1,4 @@
-const Cart = {
+export default {
   state: {
     cart: {
       sum: 0,
@@ -86,8 +86,4 @@ const Cart = {
       event.commit("deleteCart");
     },
   }
-}
-
-export default {
-  Cart
 }

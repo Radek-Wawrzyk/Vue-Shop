@@ -1,4 +1,4 @@
-const Common = {
+export default {
 	state: {
 		activeClasses: {
 			settings: false,
@@ -45,8 +45,5 @@ const Common = {
 			event.commit("toggleSettings");
 		}
 	}
-}
 
-export default {
-	Common
 }
