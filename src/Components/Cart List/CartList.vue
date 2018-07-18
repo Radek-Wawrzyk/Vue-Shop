@@ -65,7 +65,7 @@
         return this.$store.getters.cartItems;
       },
       cartSum() {
-        return this.$store.state.cart.sum;
+        return this.$store.state.cart.cart.sum;
       }
     }
   }

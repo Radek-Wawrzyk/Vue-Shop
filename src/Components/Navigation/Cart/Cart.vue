@@ -58,7 +58,7 @@
     },
     mounted: function () {
       return this.$store.state.cart.cart.cartItems.forEach(item => {
-        this.$store.state.cart.sum += item["price"] * item.amount;
+        this.$store.state.cart.cart.sum += item["price"] * item.amount;
       });
     },
     computed: {
@@ -66,7 +66,7 @@
         return this.$store.getters.cartItems;
       },
       cartSum() {
-        return this.$store.state.cart.sum;
+        return this.$store.state.cart.cart.sum;
       },
       toggleCartStatus() {
         return this.$store.getters.toggleCartStatus;
