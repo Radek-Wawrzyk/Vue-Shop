@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-6 col-lg-4">
+  <li class="col-md-6 col-lg-4">
     <div class="product">
       <router-link :to="'product/' + product.id" :aria-label="product.title" :title="product.title">
         <figure class="product-img">
@@ -11,7 +11,7 @@
         </div>
       </router-link>
     </div>
-  </div>
+  </li>
 </template>
 
 <script>

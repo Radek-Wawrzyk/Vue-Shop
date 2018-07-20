@@ -15,7 +15,7 @@
                   <th></th>
                 </tr>
                 </thead>
-                <transition-group tag="tbody" name="fade-cart" >
+                <transition-group tag="tbody" name="move-fade" >
                   <tr v-for="item in cartProducts" :key="item.id">
                     <td>
                       <div class="table-cart-product">

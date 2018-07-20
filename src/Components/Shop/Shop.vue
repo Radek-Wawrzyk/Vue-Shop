@@ -8,13 +8,13 @@
             <header class="products-header">
               <h3 class="products-header-title">Products</h3>
             </header>
-            <div class="row">
-              <ShopProduct v-for="product in products" :key="product.id" v-bind:product="product"></ShopProduct>
-            </div>
+            <transition-group tag="ul" class="row" name="move-fade" :key="products.id">
+              <ShopProduct v-for="product in products" :key="product.id" :product="product" ></ShopProduct>
+            </transition-group>
           </section>
         </div>
         <div class="col-md-3">
-          <ShopFilters></ShopFilters>
+            <ShopFilters></ShopFilters>
         </div>
       </div>
     </div>

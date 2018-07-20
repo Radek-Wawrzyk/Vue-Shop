@@ -8,7 +8,7 @@
     </button>
     <transition name="fade">
       <div class="cart-dropdown" v-if="toggleCartStatus" id="cart">
-        <transition-group class="cart-list" tag="ul" name="fade-cart" appear >
+        <transition-group class="cart-list" tag="ul" name="move-fade" appear >
           <li class="cart-item" v-for="item in cartItems" :key="item.id" >
             <figure class="cart-photo">
               <img :src="item.img" :alt="item.title" />
