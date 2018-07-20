@@ -1,4 +1,5 @@
 const state = {
+	queryString: '',
 	products: [{
 			id: 1,
 			title: "Day-Date 40",
@@ -212,12 +213,35 @@ const state = {
 }
 
 const getters = {
-	productsData(state) {
+	/*productsData(state) {
 		return state.products;
+	}*/
+	searchedProducts: (state) =>
+	{
+		return state.queryString == '' ? state.products
+		 : state.products.filter(item => item.title.toLowerCase().includes(state.queryString.toLowerCase()));
+	}
+}
+
+const mutations =
+{
+	changeQueryString(state,query)
+	{
+		state.queryString = query;
+	}
+}
+
+const actions =
+{
+	changeQueryString(event,query)
+	{
+		event.commit("changeQueryString",query);
 	}
 }
 
 export default {
 	state,
-	getters
+	getters,
+	mutations,
+	actions
 }
