@@ -1,2 +1,2 @@
 # Vue-Shop
-## A Vue based shop working with Laravel Rest Api
+> A Vue based shop working with Laravel Rest Api
