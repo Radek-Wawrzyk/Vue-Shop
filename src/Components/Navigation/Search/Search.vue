@@ -2,7 +2,7 @@
   <li class="navigation-icons-item">
     <transition name="fade">
       <div @keyup.esc="toggleSearchBar" v-show="isSearchBarToggled" class="searchbar-container">
-        <input v-model="queryString" @change="performQuery" placeholder="Search your product" class="searchbar-text" type="text" aria-label="Search your product"/>
+        <input v-model="queryString" @input="performQuery" placeholder="Search your product" class="searchbar-text" type="text" aria-label="Search your product"/>
         <button v-on:click="toggleSearchBar" class="searchbar-close" type="button">
           <svg enable-background="new 0 0 31.112 31.112" version="1.1" viewBox="0 0 31.112 31.112" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
             <polygon points="31.112 1.414 29.698 0 15.556 14.142 1.414 0 0 1.414 14.142 15.556 0 29.698 1.414 31.112 15.556 16.97 29.698 31.112 31.112 29.698 16.97 15.556"/>
@@ -17,6 +17,9 @@
 </template>
 
 <script>
+
+import debounce from "lodash.debounce"
+
 export default {
   name: "Search",
   data() {
@@ -29,11 +32,10 @@ export default {
     toggleSearchBar: function() {
       this.isSearchBarToggled = !this.isSearchBarToggled;
     },
-    performQuery: function()
-    {
+    performQuery: debounce(function() {
       this.$store.dispatch("changeQueryString",this.queryString);
-      this.$router.push('/shop');    
-    }
+      this.$router.push('/shop');
+    }, 500)
   }
 };
 </script>
