@@ -11,6 +11,9 @@
             <transition-group tag="ul" class="row" name="move-fade" :key="products.id">
               <ShopProduct v-for="product in products" :key="product.id" :product="product" ></ShopProduct>
             </transition-group>
+            <div class="products-empty" v-if="products.length == 0">
+              Sorry we couldn't find anything
+            </div>
           </section>
         </div>
         <div class="col-md-3">
