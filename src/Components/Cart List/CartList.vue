@@ -46,12 +46,15 @@
         </div>
       </div>
     </div>
+    <Footer></Footer>
   </main>
 </template>
 
 <script>
+  import Footer from "../Footer/Footer";
   export default {
     name: "CartList",
+    components: {Footer},
     methods: {
       deleteCartItem(item) {
         this.$store.dispatch("deleteCartItem", item.id)

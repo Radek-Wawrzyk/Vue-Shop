@@ -1,7 +1,7 @@
 <template>
   <li class="navigation-icons-item">
     <transition name="fade">
-      <div @keyup.esc="toggleSearchBar" v-show="isSearchBarToggled" class="searchbar-container">
+      <div @keyup.esc="toggleSearchBar" v-if="isSearchBarToggled" class="searchbar-container">
         <input v-model="queryString" @input="performQuery" placeholder="Search your product" class="searchbar-text" type="text" aria-label="Search your product"/>
         <button v-on:click="toggleSearchBar" class="searchbar-close" type="button">
           <svg enable-background="new 0 0 31.112 31.112" version="1.1" viewBox="0 0 31.112 31.112" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">

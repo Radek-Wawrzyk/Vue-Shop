@@ -108,12 +108,15 @@
         </div>
       </div>
     </div>
+    <Footer></Footer>
   </main>
 </template>
 
 <script>
+import Footer from "../../Footer/Footer";
 export default {
   name: "ShopItemPage",
+  components: {Footer},
   data() {
     return {
       tabs: ["Description", "Additional Information", "Reviews"],

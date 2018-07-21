@@ -17,10 +17,11 @@
           </section>
         </div>
         <div class="col-md-3">
-            <ShopFilters></ShopFilters>
+          <ShopFilters></ShopFilters>
         </div>
       </div>
     </div>
+    <Footer></Footer>
   </main>
 </template>
 
@@ -29,10 +30,12 @@
 import ShopFilters from "./Shop Filters/ShopFilters";
 import ShopProduct from "./Shop Product/ShopProduct";
 import ShopHeader from "./Shop Header/ShopHeader";
+import Footer from "../Footer/Footer";
 
 export default {
   name: "Shop",
   components: {
+    Footer,
     ShopFilters,
     ShopProduct,
     ShopHeader

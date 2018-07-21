@@ -120,15 +120,18 @@
         </form>
       </div>
     </section>
+    <Footer></Footer>
   </main>
 </template>
 
 <script>
 
 import axios from "axios";
+import Footer from "../Footer/Footer";
 
 export default {
   name: "Contact",
+  components: {Footer},
   data() {
     return {
       fields: {

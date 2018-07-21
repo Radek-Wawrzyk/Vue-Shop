@@ -53,3 +53,18 @@
     display: none;
   }
 }
+
+//Page transition
+
+
+.page-transition {
+  &-enter-active, &-leave-active {
+    transition: all 0.9s;
+  }
+  &-enter {
+    opacity: 0;
+  }
+  &-leave-to {
+    display: none;
+  }
+}
