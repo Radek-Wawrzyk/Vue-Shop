@@ -1,5 +1,10 @@
 const state = {
+	checkedStraps: [],
+	checkedShapes: [],
+	checkedStyles: [],
+	checkedTypes: [],
 	queryString: '',
+	filtering: false,
 	products: [{
 			id: 1,
 			title: "Day-Date 40",
@@ -213,29 +218,32 @@ const state = {
 }
 
 const getters = {
-	/*productsData(state) {
-		return state.products;
-	}*/
-	searchedProducts: (state) =>
-	{
-		return state.queryString == '' ? state.products
-		 : state.products.filter(item => item.title.toLowerCase().includes(state.queryString.toLowerCase()));
+	searchedProducts: (state) => {
+		let searchResult = state.filteredProducts = state.queryString == '' ? state.products :
+			state.products.filter(item => item.title.toLowerCase().includes(state.queryString.toLowerCase()));
+
+		if(state.filtering)
+		{
+			searchResult = searchResult.filter(item =>
+			state.checkedStraps.includes(item.properties.strap) ||
+			state.checkedShapes.includes(item.properties.shape) ||
+			state.checkedStyles.includes(item.properties.style) ||
+			state.checkedTypes.includes(item.properties.type));
+		}
+
+		return searchResult
 	}
 }
 
-const mutations =
-{
-	changeQueryString(state,query)
-	{
+const mutations = {
+	changeQueryString(state, query) {
 		state.queryString = query;
 	}
 }
 
-const actions =
-{
-	changeQueryString(event,query)
-	{
-		event.commit("changeQueryString",query);
+const actions = {
+	changeQueryString(event, query) {
+		event.commit("changeQueryString", query);
 	}
 }
 

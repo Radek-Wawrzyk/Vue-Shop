@@ -11,15 +11,15 @@
      <h3 class="filter-title">Strap type</h3>
      <ul class="filter-options">
        <li>
-          <input class="checkbox" id="checkbox-1" type="checkbox">
+          <input v-model="checkedStraps" @change="filterProducts" value="leather" class="checkbox" id="checkbox-1" type="checkbox">
           <label for="checkbox-1">Leather</label>
        </li>
        <li>
-          <input class="checkbox" id="checkbox-2" type="checkbox">
+          <input v-model="checkedStraps" @change="filterProducts" value="metal" class="checkbox" id="checkbox-2" type="checkbox">
           <label for="checkbox-2">Metal</label>
        </li>
        <li>
-          <input class="checkbox" id="checkbox-3" type="checkbox">
+          <input v-model="checkedStraps" @change="filterProducts" value="rubber" class="checkbox" id="checkbox-3" type="checkbox">
           <label for="checkbox-3">Rubber</label>
        </li>
      </ul>
@@ -28,15 +28,15 @@
      <h3 class="filter-title">Watch shape</h3>
      <ul class="filter-options">
        <li>
-          <input class="checkbox" id="checkbox-4" type="checkbox" >
+          <input v-model="checkedShapes" @change="filterProducts" value="circle" class="checkbox" id="checkbox-4" type="checkbox" >
           <label for="checkbox-4">Circle</label>
        </li>
        <li>
-          <input class="checkbox" id="checkbox-5" type="checkbox">
+          <input v-model="checkedShapes" @change="filterProducts" value="rectangle"  class="checkbox" id="checkbox-5" type="checkbox">
           <label for="checkbox-5">Rectangle</label>
        </li>
        <li>
-          <input class="checkbox" id="checkbox-6" type="checkbox">
+          <input v-model="checkedShapes" @change="filterProducts" value="other" class="checkbox" id="checkbox-6" type="checkbox">
           <label for="checkbox-6">Other</label>
        </li>
      </ul>
@@ -45,11 +45,11 @@
      <h3 class="filter-title">Style</h3>
      <ul class="filter-options">
        <li>
-          <input class="checkbox" id="checkbox-7" type="checkbox">
+          <input v-model="checkedStyles" @change="filterProducts" value="elegant" class="checkbox" id="checkbox-7" type="checkbox">
           <label for="checkbox-7">Elegant</label>
        </li>
        <li>
-          <input class="checkbox" id="checkbox-8" type="checkbox">
+          <input v-model="checkedStyles" @change="filterProducts" value="sport" class="checkbox" id="checkbox-8" type="checkbox">
           <label for="checkbox-8">Sport</label>
        </li>
      </ul>
@@ -58,15 +58,15 @@
      <h3 class="filter-title">Type</h3>
      <ul class="filter-options">
        <li>
-          <input class="checkbox" id="checkbox-9" type="checkbox">
+          <input v-model="checkedTypes" @change="filterProducts" value="analogue" class="checkbox" id="checkbox-9" type="checkbox">
           <label for="checkbox-9">Analogue</label>
        </li>
        <li>
-          <input class="checkbox" id="checkbox-10" type="checkbox">
+          <input v-model="checkedTypes" @change="filterProducts" value="digital" class="checkbox" id="checkbox-10" type="checkbox">
           <label for="checkbox-10">Digital</label>
        </li>
         <li>
-          <input class="checkbox" id="checkbox-11" type="checkbox">
+          <input v-model="checkedTypes" @change="filterProducts" value="combination" class="checkbox" id="checkbox-11" type="checkbox">
           <label for="checkbox-11">Combination</label>
        </li>
      </ul>
@@ -75,16 +75,36 @@
 </template>
 
 <script>
-
 export default {
   name: "ProductFilters",
-  computed: {
-    products() {
-      return this.$store.products;
+  data() {
+    return {
+      checkedShapes: [],
+      checkedStyles: [],
+      checkedTypes: [],
+      checkedStraps: []
+    };
+  },
+  methods: {
+    filterProducts: function() {
+      if (
+        this.checkedShapes.length == 0 &&
+        this.checkedStyles.length == 0 &&
+        this.checkedTypes.length == 0 &&
+        this.checkedStraps == 0
+      ) {
+        this.$store.state.products.filtering = false;
+      } else {
+        this.$store.state.products.filtering = true;
+      }
+
+      this.$store.state.products.checkedStraps = this.checkedStraps;
+      this.$store.state.products.checkedStyles = this.checkedStyles;
+      this.$store.state.products.checkedTypes = this.checkedTypes;
+      this.$store.state.products.checkedShapes = this.checkedShapes;
     }
   }
-}
-
+};
 </script>
 
 <styles lang="scss" src="./ShopFilters.scss" scopted />
