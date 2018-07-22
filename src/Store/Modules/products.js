@@ -224,11 +224,22 @@ const getters = {
 
 		if(state.filtering)
 		{
-			searchResult = searchResult.filter(item =>
-			state.checkedStraps.includes(item.properties.strap) ||
-			state.checkedShapes.includes(item.properties.shape) ||
-			state.checkedStyles.includes(item.properties.style) ||
-			state.checkedTypes.includes(item.properties.type));
+			if(state.checkedStraps.length > 0)
+			{
+				searchResult = searchResult.filter(item => state.checkedStraps.includes(item.properties.strap));
+			}
+			if(state.checkedShapes.length > 0)
+			{
+				searchResult = searchResult.filter(item => state.checkedShapes.includes(item.properties.shape));
+			}
+			if(state.checkedStyles.length > 0)
+			{
+				searchResult = searchResult.filter(item => state.checkedStyles.includes(item.properties.style));
+			}
+			if(state.checkedTypes.length > 0)
+			{
+				searchResult = searchResult.filter(item => state.checkedTypes.includes(item.properties.type));
+			}
 		}
 
 		return searchResult
