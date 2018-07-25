@@ -1,1 +1,17 @@
 @import "../../Styles/Settings/Colors";
+
+.products-header-title {
+  font-size: 18px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 40px;
+    background: #e4c7a2;
+  }
+}
+
+

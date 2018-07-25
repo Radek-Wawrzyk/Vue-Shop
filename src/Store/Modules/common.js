@@ -49,11 +49,7 @@ const mutations = {
 		state.activeClasses.cart = false;
 		state.activeClasses.settings = false;
 
-		if (state.activeClasses.search) {
-			state.body.className = "overflow-hidden";
-		} else {
-			state.body.className = "";
-		}
+    state.activeClasses.search ? state.body.className = "" : false;
 	}
 }
 

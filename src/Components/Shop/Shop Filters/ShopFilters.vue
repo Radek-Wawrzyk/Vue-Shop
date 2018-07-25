@@ -51,7 +51,7 @@
      </ul>
    </div>
    <div class="filter-group">
-     <h3 class="filter-title">Style {{minPrice}}</h3>
+     <h3 class="filter-title">Style</h3>
      <ul class="filter-options">
        <li>
           <input v-model="checkedStyles" @change="filterProducts" value="elegant" class="checkbox" id="checkbox-7" type="checkbox">
