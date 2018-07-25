@@ -1,4 +1,5 @@
 const state = {
+	priceRange: [],
 	checkedStraps: [],
 	checkedShapes: [],
 	checkedStyles: [],
@@ -218,45 +219,59 @@ const state = {
 }
 
 const getters = {
-  searchedProducts: (state) => {
-    let searchResult = state.filteredProducts = state.queryString == '' ? state.products :
-        state.products.filter(item => item.title.toLowerCase().includes(state.queryString.toLowerCase()));
+	searchedProducts: (state) => {
+		let searchResult = state.filteredProducts = state.queryString == '' ? state.products :
+			state.products.filter(item => item.title.toLowerCase().includes(state.queryString.toLowerCase()));
 
-    if (state.filtering) {
-      if (state.checkedStraps.length > 0) {
-        searchResult = searchResult.filter(item => state.checkedStraps.includes(item.properties.strap));
-      }
-      if (state.checkedShapes.length > 0) {
-        searchResult = searchResult.filter(item => state.checkedShapes.includes(item.properties.shape));
-      }
-      if (state.checkedStyles.length > 0) {
-        searchResult = searchResult.filter(item => state.checkedStyles.includes(item.properties.style));
-      }
-      if (state.checkedTypes.length > 0) {
-        searchResult = searchResult.filter(item => state.checkedTypes.includes(item.properties.type));
-      }
-    }
 
-    return searchResult
-  },
-  minPrice: state => {
-    return Math.min(...state.products.map(product => product.price));
-  },
-  maxPrice: state => {
-    return Math.max(...state.products.map(product => product.price));
-  }
+		if (state.priceRange) {
+			searchResult = searchResult.filter(item => item.price >= state.priceRange[0] &&
+				item.price <= state.priceRange[1]);
+		}
+
+		if (state.filtering) {
+
+
+			if (state.checkedStraps.length > 0) {
+				searchResult = searchResult.filter(item => state.checkedStraps.includes(item.properties.strap));
+			}
+			if (state.checkedShapes.length > 0) {
+				searchResult = searchResult.filter(item => state.checkedShapes.includes(item.properties.shape));
+			}
+			if (state.checkedStyles.length > 0) {
+				searchResult = searchResult.filter(item => state.checkedStyles.includes(item.properties.style));
+			}
+			if (state.checkedTypes.length > 0) {
+				searchResult = searchResult.filter(item => state.checkedTypes.includes(item.properties.type));
+			}
+		}
+
+		return searchResult
+	},
+	minPrice: state => {
+		return Math.min(...state.products.map(product => product.price));
+	},
+	maxPrice: state => {
+		return Math.max(...state.products.map(product => product.price));
+	}
 }
 
 const mutations = {
-  changeQueryString(state, query) {
-    state.queryString = query;
-  }
+	changeQueryString(state, query) {
+		state.queryString = query;
+	},
+	changePriceFilter(state, priceRange) {
+		state.priceRange = priceRange;
+	}
 }
 
 const actions = {
-  changeQueryString(event, query) {
-    event.commit("changeQueryString", query);
-  }
+	changeQueryString(event, query) {
+		event.commit("changeQueryString", query);
+	},
+	changePriceFilter(event, priceRange) {
+		event.commit("changePriceFilter", priceRange);
+	}
 }
 
 export default {

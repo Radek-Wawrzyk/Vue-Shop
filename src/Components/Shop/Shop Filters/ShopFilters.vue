@@ -9,7 +9,7 @@
     </div>
     <div class="filter-group">
       <div class="filter-price">
-        <VueSlider v-bind="sliderData" v-model="priceRange"/>
+        <VueSlider v-bind="sliderData" @input="filterPrice" v-model="priceRange"/>
         <div class="price-ranges">
           <div class="range-display">{{ minimumRange }}</div>
           <div class="range-display">{{ maximumRange }}</div>
@@ -131,7 +131,10 @@ export default {
     },
     performQuery: debounce(function() {
       this.$store.dispatch("changeQueryString", this.queryString);
-    }, 500)
+    }, 500),
+    filterPrice:debounce(function() {
+      this.$store.dispatch("changePriceFilter", this.priceRange);
+    }, 500),
   },
   computed: {
     minimumRange() {
