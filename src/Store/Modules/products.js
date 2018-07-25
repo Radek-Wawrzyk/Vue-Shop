@@ -218,44 +218,45 @@ const state = {
 }
 
 const getters = {
-	searchedProducts: (state) => {
-		let searchResult = state.filteredProducts = state.queryString == '' ? state.products :
-			state.products.filter(item => item.title.toLowerCase().includes(state.queryString.toLowerCase()));
+  searchedProducts: (state) => {
+    let searchResult = state.filteredProducts = state.queryString == '' ? state.products :
+        state.products.filter(item => item.title.toLowerCase().includes(state.queryString.toLowerCase()));
 
-		if(state.filtering)
-		{
-			if(state.checkedStraps.length > 0)
-			{
-				searchResult = searchResult.filter(item => state.checkedStraps.includes(item.properties.strap));
-			}
-			if(state.checkedShapes.length > 0)
-			{
-				searchResult = searchResult.filter(item => state.checkedShapes.includes(item.properties.shape));
-			}
-			if(state.checkedStyles.length > 0)
-			{
-				searchResult = searchResult.filter(item => state.checkedStyles.includes(item.properties.style));
-			}
-			if(state.checkedTypes.length > 0)
-			{
-				searchResult = searchResult.filter(item => state.checkedTypes.includes(item.properties.type));
-			}
-		}
+    if (state.filtering) {
+      if (state.checkedStraps.length > 0) {
+        searchResult = searchResult.filter(item => state.checkedStraps.includes(item.properties.strap));
+      }
+      if (state.checkedShapes.length > 0) {
+        searchResult = searchResult.filter(item => state.checkedShapes.includes(item.properties.shape));
+      }
+      if (state.checkedStyles.length > 0) {
+        searchResult = searchResult.filter(item => state.checkedStyles.includes(item.properties.style));
+      }
+      if (state.checkedTypes.length > 0) {
+        searchResult = searchResult.filter(item => state.checkedTypes.includes(item.properties.type));
+      }
+    }
 
-		return searchResult
-	}
+    return searchResult
+  },
+  minPrice: state => {
+    return Math.min(...state.products.map(product => product.price));
+  },
+  maxPrice: state => {
+    return Math.max(...state.products.map(product => product.price));
+  }
 }
 
 const mutations = {
-	changeQueryString(state, query) {
-		state.queryString = query;
-	}
+  changeQueryString(state, query) {
+    state.queryString = query;
+  }
 }
 
 const actions = {
-	changeQueryString(event, query) {
-		event.commit("changeQueryString", query);
-	}
+  changeQueryString(event, query) {
+    event.commit("changeQueryString", query);
+  }
 }
 
 export default {

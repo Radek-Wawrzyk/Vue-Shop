@@ -51,7 +51,7 @@
      </ul>
    </div>
    <div class="filter-group">
-     <h3 class="filter-title">Style</h3>
+     <h3 class="filter-title">Style {{minPrice}}</h3>
      <ul class="filter-options">
        <li>
           <input v-model="checkedStyles" @change="filterProducts" value="elegant" class="checkbox" id="checkbox-7" type="checkbox">
@@ -98,9 +98,8 @@ export default {
       checkedTypes: [],
       checkedStraps: [],
       sliderData: {
-        min: 0,
-        max: 220,
-
+        min: this.$store.getters.minPrice,
+        max: this.$store.getters.maxPrice,
         tooltipStyle: {
           display: "none"
         },
@@ -108,16 +107,16 @@ export default {
           backgroundColor: "#e4c7a2"
         }
       },
-      priceRange: [0,220]
+      priceRange: [this.$store.getters.minPrice, this.$store.getters.maxPrice]
     };
   },
   methods: {
-    filterProducts: function() {
+    filterProducts: function () {
       if (
-        this.checkedShapes.length == 0 &&
-        this.checkedStyles.length == 0 &&
-        this.checkedTypes.length == 0 &&
-        this.checkedStraps == 0
+          this.checkedShapes.length == 0 &&
+          this.checkedStyles.length == 0 &&
+          this.checkedTypes.length == 0 &&
+          this.checkedStraps == 0
       ) {
         this.$store.state.products.filtering = false;
       } else {
@@ -130,15 +129,15 @@ export default {
       this.$store.state.products.checkedShapes = this.checkedShapes;
     }
   },
-  computed:
-  {
-    minimumRange()
-    {
+  computed: {
+    minimumRange() {
       return this.priceRange[0] + '$';
     },
-    maximumRange()
-    {
+    maximumRange() {
       return this.priceRange[1] + '$';
+    },
+    minPrice() {
+      return this.$store.getters.minPrice;
     }
   }
 };
