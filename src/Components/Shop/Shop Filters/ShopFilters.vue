@@ -3,7 +3,7 @@
     <div class="filter-group">
       <h3 class="filter-title">Search</h3>
       <div class="search-input">
-        <input type="text" class="search" placeholder="Product name">
+        <input type="text" v-model="queryString" @input="performQuery" class="search" placeholder="Product name">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
       </div>
     </div>
@@ -82,9 +82,9 @@
    </div>
   </section>
 </template>
-
 <script>
 import VueSlider from "vue-slider-component";
+import debounce from "lodash.debounce";
 
 export default {
   name: "ProductFilters",
@@ -93,6 +93,7 @@ export default {
   },
   data() {
     return {
+      queryString: '',
       checkedShapes: [],
       checkedStyles: [],
       checkedTypes: [],
@@ -111,12 +112,12 @@ export default {
     };
   },
   methods: {
-    filterProducts: function () {
+    filterProducts: function() {
       if (
-          this.checkedShapes.length == 0 &&
-          this.checkedStyles.length == 0 &&
-          this.checkedTypes.length == 0 &&
-          this.checkedStraps == 0
+        this.checkedShapes.length == 0 &&
+        this.checkedStyles.length == 0 &&
+        this.checkedTypes.length == 0 &&
+        this.checkedStraps == 0
       ) {
         this.$store.state.products.filtering = false;
       } else {
@@ -127,14 +128,17 @@ export default {
       this.$store.state.products.checkedStyles = this.checkedStyles;
       this.$store.state.products.checkedTypes = this.checkedTypes;
       this.$store.state.products.checkedShapes = this.checkedShapes;
-    }
+    },
+    performQuery: debounce(function() {
+      this.$store.dispatch("changeQueryString", this.queryString);
+    }, 500)
   },
   computed: {
     minimumRange() {
-      return this.priceRange[0] + '$';
+      return this.priceRange[0] + "$";
     },
     maximumRange() {
-      return this.priceRange[1] + '$';
+      return this.priceRange[1] + "$";
     },
     minPrice() {
       return this.$store.getters.minPrice;
