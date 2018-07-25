@@ -44,9 +44,6 @@ export default {
     toggleSearchStatus() {
       return this.$store.getters.toggleSearchStatus;
     }
-  },
-  mounted: function () {
-    console.log(this.$refs.autoFocus);
   }
 };
 </script>
