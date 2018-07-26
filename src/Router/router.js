@@ -26,12 +26,11 @@ export default new Router({
     },
     {
       path: '/sign',
-      name: 'Sign',
+      name: '',
       component: Authorization,
 
       children: [{
           path: '',
-          name: 'Default',
           component: Registration,
         }, {
           path: 'up',
