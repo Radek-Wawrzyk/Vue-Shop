@@ -30,6 +30,10 @@ export default new Router({
       component: Authorization,
 
       children: [{
+          path: '',
+          name: 'Default',
+          component: Registration,
+        }, {
           path: 'up',
           name: 'Registration',
           component: Registration,
