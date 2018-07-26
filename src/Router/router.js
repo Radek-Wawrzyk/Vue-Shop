@@ -5,19 +5,41 @@ import Shop from '@/Components/Shop/Shop.vue'
 import ShopItemPage from '@/Components/Shop/Shop Item Page/ShopItemPage.vue'
 import Contact from '@/Components/Contact/Contact.vue'
 import CartList from '@/Components/Cart List/CartList.vue'
+import Authorization from '@/Components/Authorization/Authorization.vue'
+import Login from '@/Components/Authorization/Login/Login.vue'
+import Registration from '@/Components/Authorization/Registration/Registration.vue'
 
 Vue.use(Router)
 
 export default new Router({
   mode: "history",
-  scrollBehavior (to, from) {
-    return { x: 0, y: 0 }
+  scrollBehavior(to, from) {
+    return {
+      x: 0,
+      y: 0
+    }
   },
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/sign',
+      name: 'Sign',
+      component: Authorization,
+
+      children: [{
+          path: 'up',
+          name: 'Registration',
+          component: Registration,
+        },
+        {
+          path: 'in',
+          name: 'Login',
+          component: Login,
+        }
+      ]
     },
     {
       path: '/shop',
