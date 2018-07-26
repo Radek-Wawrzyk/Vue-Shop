@@ -223,15 +223,12 @@ const getters = {
 		let searchResult = state.filteredProducts = state.queryString == '' ? state.products :
 			state.products.filter(item => item.title.toLowerCase().includes(state.queryString.toLowerCase()));
 
-
 		if (state.priceRange) {
 			searchResult = searchResult.filter(item => item.price >= state.priceRange[0] &&
 				item.price <= state.priceRange[1]);
 		}
 
 		if (state.filtering) {
-
-
 			if (state.checkedStraps.length > 0) {
 				searchResult = searchResult.filter(item => state.checkedStraps.includes(item.properties.strap));
 			}

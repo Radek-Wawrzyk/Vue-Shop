@@ -14,4 +14,59 @@
   }
 }
 
+.products-header
+{
+  display: flex;
+  justify-content: space-between;
+}
 
+.sorting-dropdown
+{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-button
+{
+  position: relative;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid black;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  >svg
+  {
+    width: 15px;
+  }
+  z-index: 1000;
+}
+
+.dropdown-items
+{
+  padding: 10px;
+  border-radius: 0 0 3px 3px;
+  border: 1px solid black;
+  border-top: none;
+  background: white;
+
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+
+  z-index: 1000;
+}
+
+.dropdown-item
+{
+  z-index: 1000;
+  &:hover
+  {
+    color: $gold;
+    cursor: pointer;
+  }
+}
