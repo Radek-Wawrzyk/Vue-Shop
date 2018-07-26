@@ -9,26 +9,20 @@
               <h3 class="products-header-title">Products</h3>
               <div class="sorting-dropdown">
                 Sorting: 
-                <div>
+                <div class="dropdown">
                 <button @click="displayDropdown = !displayDropdown" class="dropdown-button" type="button">
-                  Default (no sorting)
-                  <svg aria-hidden="true" data-prefix="fas" data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-angle-down fa-w-10 fa-2x"><path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg>
-                  <transition name="fade">
+                  {{activeSortingSchema}}
+                  <svg aria-hidden="true" data-prefix="fas" data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-angle-down fa-w-10 fa-2x"><path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg>   
+                </button>
+                <transition name="fade">
                   <div v-show="displayDropdown" class="dropdown-items">
                     <ul class="items-container">
-                      <li class="dropdown-item">
-                        Default (no sorting)
-                      </li>
-                      <li class="dropdown-item">
-                        Descending by Price
-                      </li>
-                      <li class="dropdown-item">
-                        Ascending by Price
+                      <li v-for="(item) in sortingSchemas" :key="item.key" @click="applySorting(item.key)" class="dropdown-item">
+                        {{ item.displayName }}
                       </li>
                     </ul>
                   </div>
                 </transition>
-                </button>
                 </div>
               </div>
             </header>
@@ -65,12 +59,28 @@ export default {
   },
   data() {
     return {
-      displayDropdown: false
+      displayDropdown: false,
     };
+  },
+  methods:
+  {
+    applySorting(key)
+    {
+      this.$store.dispatch("changeSortingSchema",key);
+      this.displayDropdown = !this.displayDropdown;
+    }
   },
   computed: {
     products() {
       return this.$store.getters.searchedProducts;
+    },
+    sortingSchemas()
+    {
+      return this.$store.state.products.sortingSchemas;
+    },
+    activeSortingSchema()
+    {
+      return this.$store.getters.activeSortingSchemaName;
     }
   }
 };

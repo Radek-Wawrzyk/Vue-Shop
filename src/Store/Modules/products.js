@@ -6,6 +6,22 @@ const state = {
 	checkedTypes: [],
 	queryString: '',
 	filtering: false,
+
+	activeSortingSchema: 0,
+	sortingSchemas: [{
+			key: 0,
+			displayName: 'Default (no sorting)'
+		},
+		{
+			key: 1,
+			displayName: 'Descending by Price'
+		},
+		{
+			key: 2,
+			displayName: 'Ascending by Price'
+		}
+	],
+
 	products: [{
 			id: 1,
 			title: "Day-Date 40",
@@ -243,13 +259,34 @@ const getters = {
 			}
 		}
 
-		return searchResult
+		if (state.activeSortingSchema != 0) {
+			searchResult.sort(function (a, b) {
+				var keyA = a.price,
+					keyB = b.price;
+
+				// Compare the 2 prices
+				if (state.activeSortingSchema == 1) {
+					if (keyA > keyB) return -1;
+					if (keyA < keyB) return 1;
+				} else if (state.activeSortingSchema == 2) {
+					if (keyA < keyB) return -1;
+					if (keyA > keyB) return 1;
+				}
+
+				return 0;
+			})
+		}
+
+		return searchResult;
 	},
 	minPrice: state => {
 		return Math.min(...state.products.map(product => product.price));
 	},
 	maxPrice: state => {
 		return Math.max(...state.products.map(product => product.price));
+	},
+	activeSortingSchemaName: state => {
+		return state.sortingSchemas[state.activeSortingSchema].displayName;
 	}
 }
 
@@ -259,6 +296,9 @@ const mutations = {
 	},
 	changePriceFilter(state, priceRange) {
 		state.priceRange = priceRange;
+	},
+	changeSortingSchema(state, key) {
+		state.activeSortingSchema = key;
 	}
 }
 
@@ -268,6 +308,9 @@ const actions = {
 	},
 	changePriceFilter(event, priceRange) {
 		event.commit("changePriceFilter", priceRange);
+	},
+	changeSortingSchema(event, key) {
+		event.commit("changeSortingSchema", key);
 	}
 }
 
