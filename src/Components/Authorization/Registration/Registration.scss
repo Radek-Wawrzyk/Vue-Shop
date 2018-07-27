@@ -6,3 +6,36 @@
 
     padding: 30px;
 }
+
+.registration-form
+{
+    width: 30%;
+}
+
+.form-section
+{
+    padding: 4px;
+}
+
+.checkbox-section
+{
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    >input
+    {
+        width: 16px;
+    }
+}
+
+.button-signup
+{
+    margin-top: 10px;
+
+    height: 45px;
+    width: 100%;
+    background-color:lightblue;
+}

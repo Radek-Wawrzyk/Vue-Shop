@@ -18,15 +18,15 @@
 				<label>Password</label>
 				<input type="password"/>
 			</div>
-			<div class="form-section">
+			<div class="form-section checkbox-section">
 				<label>Confirm our Regulations</label>
 				<input type="checkbox"/>
 			</div>
-			<div class="form-section">
+			<div class="form-section checkbox-section">
 				<label>Allow us to process your data</label>
 				<input type="checkbox"/>
 			</div>
-			<button>Sign up</button>
+			<button class="button-signup">Sign up</button>
 		</div>
 	</main>
 </template>

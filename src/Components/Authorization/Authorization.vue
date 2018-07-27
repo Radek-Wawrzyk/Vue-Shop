@@ -6,7 +6,9 @@
 					<router-link to="/sign/in">Login</router-link>
 			</div>
 			<div class="authorization-view">
-				<router-view></router-view>
+				<transition name="fade">
+					<router-view></router-view>
+				</transition>
 			</div>
 		</div>
 	</main>

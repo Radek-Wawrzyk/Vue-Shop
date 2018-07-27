@@ -10,7 +10,10 @@
 				<label>Password</label>
 				<input type="password"/>
 			</div>
-			<button>Sign in</button>
+			<div class="form-buttons">
+				<button class="button-signin">Sign in</button>
+				<button class="button-forgot">I forgot my Password</button>
+			</div>
 		</div>
 	</main>
 </template>
