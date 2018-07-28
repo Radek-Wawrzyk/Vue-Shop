@@ -12,7 +12,7 @@
 			</div>
 			<div class="form-buttons">
 				<button class="button-signin">Sign in</button>
-				<a class="forgot-password" href="#">I forgot my password</a>
+				<a class="forgot-password" href="#" aria-label="Forgot my password">I forgot my password</a>
 			</div>
 		</div>
 	</div>
