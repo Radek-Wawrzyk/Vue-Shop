@@ -31,7 +31,8 @@ export default new Router({
 
       children: [{
           path: '',
-          component: Registration,
+          //component: Registration,
+          redirect: { name: 'Registration'}
         }, {
           path: 'up',
           name: 'Registration',

@@ -1,5 +1,5 @@
 <template>
-	<main class="login-container">
+	<div class="login-container">
 		<h5>Sign in to Your Account</h5>
 		<div class="login-form">
 			<div class="form-section">
@@ -15,7 +15,7 @@
 				<button class="button-forgot">I forgot my Password</button>
 			</div>
 		</div>
-	</main>
+	</div>
 </template>
 <style lang="scss" src="./Login.scss" scoped>
 </style>

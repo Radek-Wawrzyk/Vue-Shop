@@ -1,5 +1,5 @@
 <template>
-	<main class="registration-container">
+	<div class="registration-container">
 		<h5>Create Account</h5>
 		<div class="registration-form">
 			<div class="form-section">
@@ -28,7 +28,7 @@
 			</div>
 			<button class="button-signup">Sign up</button>
 		</div>
-	</main>
+	</div>
 </template>
 <style lang="scss" src="./Registration.scss" scoped>
 </style>

@@ -1,19 +1,51 @@
+@import "../../Styles/Settings/Colors";
+
 .authorization-container
 {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background: lightgray;
 }
 
 .authorization-content
 {
-    margin-top: 40px;
-    width: 50%;
+    margin-top: 20px;
     background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+
+    width: 50%;
+
+    &::before
+    {
+        display: block;
+        height: 3px;
+        background-color: $gold;
+        width: 100%;
+        content: '';
+    }
 }
 
 .authorization-tabs
 {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+
+    margin-top: 12px;
+}
+
+.tab-button
+{
+    width: 30%;
+    padding: 10px;
+
+    border: 1px solid $gold;
+
+    &:hover, &.router-link-active
+    {
+        background: $gold;
+        color: white;
+    }
 }
