@@ -1,56 +1,46 @@
 @import "../../../Styles/Settings/Colors";
 
-.registration-container
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 30px;
-
-    &.fade-leave-active
-    {
-        display: none;
-    }
+.registration-container {
+  padding: 0 30px;
+  &.fade-leave-active {
+    display: none;
+  }
+  h5 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
 }
-
-.registration-form
-{
-    width: 90%;
+.form-section {
+  margin: 10px 0;
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
 }
+.checkbox-section {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
 
-.form-section
-{
-    padding: 4px;
 }
-
-.checkbox-section
-{
-    white-space: nowrap;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    >input
-    {
-        width: 16px;
-    }
-}
-
-.button-signup
-{
-    margin-top: 10px;
-
-    height: 45px;
-    width: 100%;
-
+.button-signup {
+  margin: 30px 0;
+  height: 45px;
+  width: 100%;
+  background: $greyDark;
+  color: white;
+  transition: background 0.25s;
+  &:hover, &:focus {
     background: $gold;
-    color: white;   
-    &:hover
-    {
-        border: 1px solid $gold; 
-        color: initial;
-        background: none;
-    }
+  }
+}
+
+//Media
+
+@media screen and (max-width: 576px) {
+  .registration-container {
+    padding: 0 15px;
+  }
 }

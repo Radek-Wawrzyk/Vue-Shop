@@ -18,17 +18,23 @@
 				<label>Password</label>
 				<input type="password"/>
 			</div>
+      <div class="form-section">
+				<label>Confirm password</label>
+				<input type="password"/>
+			</div>
 			<div class="form-section checkbox-section">
 				<label>Confirm our Regulations</label>
-				<input type="checkbox"/>
+				<input value="regulations" class="checkbox" id="checkbox-1" type="checkbox">
+        <label for="checkbox-1"></label>
 			</div>
 			<div class="form-section checkbox-section">
 				<label>Allow us to process your data</label>
-				<input type="checkbox"/>
+				<input value="rodo" class="checkbox" id="checkbox-2" type="checkbox">
+        <label for="checkbox-2"></label>
 			</div>
 			<button class="button-signup">Sign up</button>
 		</div>
 	</div>
 </template>
-<style lang="scss" src="./Registration.scss" scoped>
-</style>
+
+<style lang="scss" src="./Registration.scss" scoped></style>

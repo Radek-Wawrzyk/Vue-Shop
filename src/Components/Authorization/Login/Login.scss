@@ -1,55 +1,48 @@
 @import "../../../Styles/Settings/Colors";
 
-.login-container
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 30px;
-
-    &.fade-leave-active
-    {
-        display: none;
-    }
+.login-container {
+  padding: 0 30px;
+  &.fade-leave-active {
+    display: none;
+  }
+  h5 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
 }
-
-.form-section
-{
-    padding: 4px;
+.form-section {
+  margin: 10px 0;
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
 }
-
-.form-buttons
-{
-    display: flex;
-    flex-direction: column;
-
-    margin-top: 15px;
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
 }
-
-.button-signin
-{
-    height: 45px;
-    border: 1px solid $gold;
-
-    &:hover
-    {
-        background: $gold;
-        color: white;
-    }
-}
-
-.button-forgot
-{
-    margin-top: 10px;
-    height: 45px;
-    
+.button-signin {
+  height: 45px;
+  background: $greyDark;
+  color: white;
+  transition: color 0.25s, background 0.25s;
+  &:hover {
     background: $gold;
-    color: white;   
-    &:hover
-    {
-        border: 1px solid $gold; 
-        color: initial;
-        background: none;
-    }
+    color: white;
+  }
+}
+
+//Forgot password link
+
+.forgot-password {
+  text-align: right;
+  margin: 30px 0 0 0;
+  font-size: 13px;
+  color: $greyMedium;
+  transition: color 0.25s;
+  &:hover, &:focus {
+    color: $gold;
+    text-decoration: underline;
+  }
 }

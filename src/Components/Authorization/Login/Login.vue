@@ -1,6 +1,6 @@
 <template>
 	<div class="login-container">
-		<h5>Sign in to Your Account</h5>
+		<h5>Sign in</h5>
 		<div class="login-form">
 			<div class="form-section">
 				<label>E-mail Address</label>
@@ -12,10 +12,10 @@
 			</div>
 			<div class="form-buttons">
 				<button class="button-signin">Sign in</button>
-				<button class="button-forgot">I forgot my Password</button>
+				<a class="forgot-password" href="#">I forgot my password</a>
 			</div>
 		</div>
 	</div>
 </template>
-<style lang="scss" src="./Login.scss" scoped>
-</style>
+
+<style lang="scss" src="./Login.scss" scoped></style>

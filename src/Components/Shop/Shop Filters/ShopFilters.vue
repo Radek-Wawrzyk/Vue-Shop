@@ -9,6 +9,7 @@
     </div>
     <div class="filter-group">
       <div class="filter-price">
+        <h3 class="filter-title">Price</h3>
         <VueSlider v-bind="sliderData" @input="filterPrice" v-model="priceRange"/>
         <div class="price-ranges">
           <div class="range-display">{{ minimumRange }}</div>

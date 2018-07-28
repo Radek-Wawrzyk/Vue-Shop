@@ -21,6 +21,14 @@ textarea {
   resize: vertical;
 }
 
+//Remove browser autocomplete styles
+
+input:-webkit-autofill, textarea:-webkit-autofill, 
+select:-webkit-autofill  {
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
 //Search input
 
 .search-input {
