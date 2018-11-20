@@ -17,6 +17,18 @@
     margin-bottom: 10px;
   }
 }
+
+.section-header
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-error
+{
+  color: red;
+}
+
 .checkbox-section {
   white-space: nowrap;
   display: flex;
