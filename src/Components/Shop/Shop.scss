@@ -1,73 +1,21 @@
 @import "../../Styles/Settings/Colors";
 
-.products-header-title {
-  font-size: 18px;
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    height: 1px;
-    width: 40px;
-    background: #e4c7a2;
-  }
-}
-
-.products-header
-{
-  display: flex;
-  justify-content: space-between;
-}
-
-.sorting-dropdown
-{
+.products-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.dropdown-button
-{
-  position: relative;
-  padding: 10px;
-  border-radius: 3px;
-  border: 1px solid black;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  >svg
-  {
-    width: 15px;
-  }
-}
-
-.dropdown
-{
-  position: relative;
-}
-
-.dropdown-items
-{
-  padding: 10px;
-  border-radius: 0 0 3px 3px;
-  border: 1px solid black;
-  border-top: none;
-  background: white;
-
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  width: 100%;
-  white-space: pre-line;
-}
-
-.dropdown-item
-{
-  &:hover
-  {
-    color: $gold;
-    cursor: pointer;
+  flex-wrap: wrap;
+  &-title {
+    font-size: 18px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 1px;
+      width: 40px;
+      background: #e4c7a2;
+    }
   }
 }

@@ -10,7 +10,7 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped >
   h2 {
     text-align: center;
     padding: 60px 0;

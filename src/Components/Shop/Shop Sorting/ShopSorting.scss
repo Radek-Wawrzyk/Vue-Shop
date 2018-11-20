@@ -1,0 +1,70 @@
+@import "../../../Styles/Settings/Colors";
+
+.sorting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-name {
+    margin: 0 5px 0 0;
+  }
+  &-dropdown {
+    position: relative;
+    min-width: 190px;
+    &-btn {
+      position: relative;
+      padding: 10px 30px 10px 10px;
+      border: 1px solid $greyLight;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      svg {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        width: 15px;
+        height: auto;
+        margin: 0 0 0 10px;
+        transition: transform 0.25s;
+        &.is-active {
+          transform: translateY(-50%) rotate(180deg);
+        }
+        path {
+          fill: $greyDark;
+        }
+      }
+    }
+    &-list {
+      border: 1px solid $greyLight;
+      border-top: none;
+      background: white;
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      width: 100%;
+      &-item {
+        font-size: 14px;
+        transition: color 0.25s;
+
+        a {
+          padding: 8px 10px;
+          display: block;
+        }
+        &:hover, &:focus {
+          color: $gold;
+          cursor: pointer ;
+        }
+      }
+    }
+  }
+}
+
+//Media
+
+@media screen and (max-width: 468px) {
+  .sorting {
+    width: 100%;
+    margin: 15px 0;
+  }
+}
